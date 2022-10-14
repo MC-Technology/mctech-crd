@@ -1,0 +1,11 @@
+location: TR11 3PH
+media_player: false
+google_logging: false
+text_logging: true
+gps_sensor: false
+servo_motor: false
+relay_output:
+  gpio_pin: 24 
+  on_time: 6
+switch_input:
+  gpio_pin: 23

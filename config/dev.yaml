@@ -1,0 +1,31 @@
+location: TR11 3PH
+keyboard_trigger: 1
+media_player: false
+network:
+  max_retries: 10
+google_logging:
+  # CosmicArray (beta/production)
+  # https://docs.google.com/spreadsheets/d/1Kebcv2RTz_8iwKIQMtgWUtVs9x--Jug5lIndyzWbgl0/edit?usp=sharing
+  # credentials_file: production
+  # sheet_id: 1Kebcv2RTz_8iwKIQMtgWUtVs9x--Jug5lIndyzWbgl0
+  #
+  # CosmicPiTest (development)
+  # https://docs.google.com/spreadsheets/d/10eR2e-A6Gmm-V0kRyeiF26AB9Pry2V3inDA64CelqEs/edit#gid=0
+  credentials_file: development
+  sheet_id: 10eR2e-A6Gmm-V0kRyeiF26AB9Pry2V3inDA64CelqEs
+  debug: 1
+text_logging: true
+gps_sensor: false
+servo_motor: false
+midi_controls:
+  sensitivity: 10
+  sensitivity_seconds: 10
+  servo_angle: 11
+  angle_multiplier: 90
+  servo_on_ctrl: 91
+  servo_on_time: 1
+relay_output:
+  gpio_pin: 24
+  on_time: 6
+switch_input:
+  gpio_pin: 23

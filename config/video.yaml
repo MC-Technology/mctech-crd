@@ -1,0 +1,5 @@
+location: TR11 3PH
+media_player: true
+text_logging: true
+switch_input:
+  gpio_pin: 23

@@ -1,0 +1,14 @@
+location: TR11 3PH
+min_interval: 5
+media_player: false
+google_logging: false
+text_logging: true
+gps_sensor: false
+servo_motor: true
+midi_controls:
+  sensitivity: 10
+  sensitivity_seconds: 10
+  servo_angle: 11
+  angle_multiplier: 90
+  servo_on_ctrl: 91
+  servo_on_time: 1
