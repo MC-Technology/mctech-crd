@@ -10,7 +10,7 @@ from time import time, gmtime, sleep, strftime, localtime
 from urllib.request import urlopen
 
 # External libs
-from sixfab_sensors import SixFabSensors
+# from sixfab_sensors import SixFabSensors
 
 # Our modules
 from config_reader import ConfigReader
@@ -83,7 +83,7 @@ def get_config(args):
   return ConfigReader(config_file)
 
 
-def main(argv):
+def listen(argv):
   global logger
 
   last_time = 0
@@ -126,15 +126,15 @@ def main(argv):
     logger.info("Using RelayOutput on {}".format(relay_output_pin))
     relay_output = RelayOutput(relay_output_pin)
 
-  gps_sensors = None
-  if config.has_gps_sensor():
-    gps_sensors = SixFabSensors()
-    logger.info("temperature is {}".format(gps_sensors.get_temperature()))
-    gps_location = gps_sensors.get_location()
-    if gps_location == False:
-      logger.info('No GPS available!')
-    else:
-      location = gps_location
+  # gps_sensors = None
+  # if config.has_gps_sensor():
+  #   gps_sensors = SixFabSensors()
+  #   logger.info("temperature is {}".format(gps_sensors.get_temperature()))
+  #   gps_location = gps_sensors.get_location()
+  #   if gps_location == False:
+  #     logger.info('No GPS available!')
+  #   else:
+  #     location = gps_location
 
   serial_number = get_serial_number()
   ip_address = get_ip_address() or "no-network"
@@ -252,4 +252,4 @@ def main(argv):
     sys.exit(0)
 
 if __name__ == "__main__":
-  main(sys.argv[1:])
+  listen(sys.argv[1:])

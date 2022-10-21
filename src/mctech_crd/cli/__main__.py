@@ -1,15 +1,17 @@
 """Command-line interface."""
 import click
+from mctech_crd.cosmic import listen as crd_listen
+
 
 @click.group()
 def cli():
   pass
 
 
-@cli.command(name='launch')
-def launch():
-    click.echo('Launching cosmic ray detection client')
-
+@cli.command(name='listen')
+def listen():
+    click.echo('Listening for cosmic ray detector events')
+    crd_listen()
 
 @cli.command(name='update')
 def welcome():

@@ -11,6 +11,12 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
+      - name: Configuration for publishing
+        # https://hackernoon.com/how-to-create-a-conditional-workflow-with-advanced-github-actions
+        run: |
+        echo "PUBLISH_TO_PYPI=${{ secrets.PUBLISH_TO_PYPI }}" >> $GITHUB_ENV
+        echo "PUBLISH_RELEASE_NOTES=${{ secrets.PUBLISH_RELEASE_NOTES }}" >> $GITHUB_ENV
+
       - name: Check out the repository
         uses: actions/checkout@v3
         with:
@@ -56,14 +62,14 @@ jobs:
           poetry build --ansi
 
       - name: Publish package on PyPI
-        if: steps.check-version.outputs.tag
+        if: steps.check-version.outputs.tag && env.PUBLISH_TO_PYPI != null
         uses: pypa/gh-action-pypi-publish@v1.5.0
         with:
           user: __token__
           password: ${{ secrets.PYPI_TOKEN }}
 
       - name: Publish package on TestPyPI
-        if: "! steps.check-version.outputs.tag"
+        if: "! steps.check-version.outputs.tag && env.PUBLISH_TO_PYPI != null"
         uses: pypa/gh-action-pypi-publish@v1.5.0
         with:
           user: __token__
@@ -71,6 +77,7 @@ jobs:
           repository_url: https://test.pypi.org/legacy/
 
       - name: Publish the release notes
+        if: "! steps.check-version.outputs.tag && env.PUBLISH_RELEASE_NOTES != null"
         uses: release-drafter/release-drafter@v5.20.0
         with:
           publish: ${{ steps.check-version.outputs.tag != '' }}
