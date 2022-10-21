@@ -7,11 +7,7 @@ class ConfigReader:
     self.read_config()
 
   def keyboard_trigger(self):
-<<<<<<< HEAD
-    return self.cfg.get('dev_mode', 0)
-=======
     return self.cfg.get('keyboard_trigger', 0)
->>>>>>> d693f53... Test hits
 
   def get_logging(self):
     return self.cfg['logging']

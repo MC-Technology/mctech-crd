@@ -1,0 +1,1 @@
+"""MCtech Cosmic Ray Detector."""

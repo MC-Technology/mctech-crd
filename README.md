@@ -1,6 +1,27 @@
-# Cosmic Pi
+# MCtech Cosmic Ray Detector
 
-Python package Raspberry Pi + Cosmic Ray detector.
+[![PyPI](https://img.shields.io/pypi/v/mctech-crd.svg)][pypi_]
+[![Status](https://img.shields.io/pypi/status/mctech-crd.svg)][status]
+[![Python Version](https://img.shields.io/pypi/pyversions/mctech-crd)][python version]
+[![License](https://img.shields.io/pypi/l/mctech-crd)][license]
+
+[![Read the documentation at https://mctech-crd.readthedocs.io/](https://img.shields.io/readthedocs/mctech-crd/latest.svg?label=Read%20the%20Docs)][read the docs]
+[![Tests](https://github.com/MC-Technology/mctech-crd/workflows/Tests/badge.svg)][tests]
+[![Codecov](https://codecov.io/gh/tombola/mctech-crd/branch/main/graph/badge.svg)][codecov]
+
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][pre-commit]
+[![Black](https://img.shields.io/badge/code%20style-black-000000.svg)][black]
+
+[pypi_]: https://pypi.org/project/mctech-crd/
+[status]: https://pypi.org/project/mctech-crd/
+[python version]: https://pypi.org/project/mctech-crd
+[read the docs]: https://mctech-crd.readthedocs.io/
+[tests]: https://github.com/MC-Technology/mctech-crd/actions?workflow=Tests
+[codecov]: https://app.codecov.io/gh/tombola/mctech-crd
+[pre-commit]: https://github.com/pre-commit/pre-commit
+[black]: https://github.com/psf/black
+
+Python package for a Raspberry Pi Cosmic Ray detector.
 
 Designed to work with the Mayes Creative Tech Cosmic Pi 'hardware'.
 
@@ -10,9 +31,26 @@ It then translates this into various outputs based on configuration.
 
 # Requirements
 
-Python 3
+Raspberry Pi running Python 3.
 
 A monitor and audio outputs if using the media player.
+
+## Installation
+
+You can install _MCtech Cosmic Ray Detector_ via [pip] from GitHub, using a [pat].
+
+```console
+$ pip install git+https://{token}@github.com/MC-Technology/mctech-crd.git@{version}
+
+```
+
+## Features
+
+- TODO
+
+## Usage
+
+Please see the [Command-line Reference] for details.
 
 # Setup
 
@@ -156,3 +194,20 @@ When a hit is detected, it will switch on a relay on the configured pin for a nu
 Another way of faking hits using a switch that connects the configured pin to ground
 
 `gpio_pin` - the pin that the switch is connected to.
+
+## Credits
+
+This python package structure was initially generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter] template.
+
+[@cjolowicz]: https://github.com/cjolowicz
+[pypi]: https://pypi.org/
+[hypermodern python cookiecutter]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
+[file an issue]: https://github.com/MC-Technology/mctech-crd/issues
+[pip]: https://pip.pypa.io/
+
+<!-- github-only -->
+
+[license]: https://github.com/MC-Technology/mctech-crd/blob/main/LICENSE
+[contributor guide]: https://github.com/MC-Technology/mctech-crd/blob/main/CONTRIBUTING.md
+[command-line reference]: https://mctech-crd.readthedocs.io/en/latest/usage.html
+[pat]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token

@@ -1,0 +1,14 @@
+{
+  "_output_dir": "/Users/tom/projects/cosmic/cosmic-pi",
+  "_template": "cookiecutter-hypermodern-python",
+  "author": "MC Tech",
+  "copyright_year": "2022",
+  "development_status": "Development Status :: 3 - Alpha",
+  "email": "mail@claudiojolowicz.com",
+  "friendly_name": "MCtech Cosmic Ray Detector",
+  "github_user": "tombola",
+  "license": "MIT",
+  "package_name": "mctech_crd",
+  "project_name": "mctech-crd",
+  "version": "0.0.1"
+}

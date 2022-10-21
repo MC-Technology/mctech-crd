@@ -1,9 +1,9 @@
 #!/bin/sh
 
-export LOG_FILE=$HOME/cosmic-pi-client.log
+export LOG_FILE=$HOME/mctech-crd.log
 export NEW_RELEASE=/tmp/cosmic-release
 
-export GH_REPO=MC-Technology/cosmic-pi-client
+export GH_REPO=MC-Technology/mctech-crd
 
 DIR=$(dirname "$0")
 cd $DIR
@@ -19,9 +19,9 @@ python -V || export PYENV_VERSION=system
 # TODO: check if already most recent
 # TODO: move update process to another script
 gh release download -A tar.gz -D $NEW_RELEASE && \
-tar -xvzf $NEW_RELEASE/cosmic-pi-client-*.tar.gz -C $NEW_RELEASE && \
-rm -rf $HOME/cosmic-pi-client/*
-mv $NEW_RELEASE/cosmic-pi-client*/* $HOME/cosmic-pi-client && \
+tar -xvzf $NEW_RELEASE/mctech-crd-*.tar.gz -C $NEW_RELEASE && \
+rm -rf $HOME/mctech-crd/*
+mv $NEW_RELEASE/mctech-crd*/* $HOME/mctech-crd && \
 rm $NEW_RELEASE/*.tar.gz
 
 python3 src/cosmic.py

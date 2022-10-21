@@ -31,7 +31,7 @@ logger = logging.getLogger()
 def await_internet_access(max_retries=20, retry_delay=5):
   internet_accessible = False
   retry = 0
-  
+
   while not internet_accessible and retry < max_retries:
     try:
       internet_accessible = bool(urlopen("http://google.com"))
@@ -41,7 +41,7 @@ def await_internet_access(max_retries=20, retry_delay=5):
       sleep(retry_delay)
     else:
       logger.info(f"Internet accessible")
-    
+
   return internet_accessible
 
 def get_ip_address():
@@ -120,7 +120,7 @@ def main(argv):
       logger.info('Using Google Sheets logging')
     except:
       logger.warning('Cannot use Google Sheets logging - check your network connection!')
-3
+
   if relay_config:
     relay_output_pin = relay_config.get('gpio_pin', 24)
     logger.info("Using RelayOutput on {}".format(relay_output_pin))
@@ -233,7 +233,7 @@ def main(argv):
     logger.warning("Sensor initialized, waiting for input or CTRL+C to quit")
     while True:
       sleep(1)
-      
+
   except KeyboardInterrupt:
     del gm
     if gps_sensors is not None:

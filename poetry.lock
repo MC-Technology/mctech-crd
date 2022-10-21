@@ -1,0 +1,3511 @@
+[[package]]
+name = "alabaster"
+version = "0.7.12"
+description = "A configurable sidebar-enabled Sphinx theme"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "argcomplete"
+version = "2.0.0"
+description = "Bash tab completion for argparse"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+importlib-metadata = {version = ">=0.23,<5", markers = "python_version == \"3.7\""}
+
+[package.extras]
+test = ["wheel", "pexpect", "flake8", "coverage"]
+
+[[package]]
+name = "attrs"
+version = "22.1.0"
+description = "Classes Without Boilerplate"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+dev = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "mypy (>=0.900,!=0.940)", "pytest-mypy-plugins", "zope.interface", "furo", "sphinx", "sphinx-notfound-page", "pre-commit", "cloudpickle"]
+docs = ["furo", "sphinx", "zope.interface", "sphinx-notfound-page"]
+tests = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "mypy (>=0.900,!=0.940)", "pytest-mypy-plugins", "zope.interface", "cloudpickle"]
+tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "mypy (>=0.900,!=0.940)", "pytest-mypy-plugins", "cloudpickle"]
+
+[[package]]
+name = "babel"
+version = "2.10.3"
+description = "Internationalization utilities"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pytz = ">=2015.7"
+
+[[package]]
+name = "bandit"
+version = "1.7.4"
+description = "Security oriented static analyser for python code."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+colorama = {version = ">=0.3.9", markers = "platform_system == \"Windows\""}
+GitPython = ">=1.0.1"
+PyYAML = ">=5.3.1"
+stevedore = ">=1.20.0"
+
+[package.extras]
+test = ["coverage (>=4.5.4)", "fixtures (>=3.0.0)", "flake8 (>=4.0.0)", "stestr (>=2.5.0)", "testscenarios (>=0.5.0)", "testtools (>=2.3.0)", "toml", "beautifulsoup4 (>=4.8.0)", "pylint (==1.9.4)"]
+toml = ["toml"]
+yaml = ["pyyaml"]
+
+[[package]]
+name = "beautifulsoup4"
+version = "4.11.1"
+description = "Screen-scraping library"
+category = "dev"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.dependencies]
+soupsieve = ">1.2"
+
+[package.extras]
+html5lib = ["html5lib"]
+lxml = ["lxml"]
+
+[[package]]
+name = "black"
+version = "22.10.0"
+description = "The uncompromising code formatter."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+click = ">=8.0.0"
+mypy-extensions = ">=0.4.3"
+pathspec = ">=0.9.0"
+platformdirs = ">=2"
+tomli = {version = ">=1.1.0", markers = "python_full_version < \"3.11.0a7\""}
+typed-ast = {version = ">=1.4.2", markers = "python_version < \"3.8\" and implementation_name == \"cpython\""}
+typing-extensions = {version = ">=3.10.0.0", markers = "python_version < \"3.10\""}
+
+[package.extras]
+colorama = ["colorama (>=0.4.3)"]
+d = ["aiohttp (>=3.7.4)"]
+jupyter = ["ipython (>=7.8.0)", "tokenize-rt (>=3.2.0)"]
+uvloop = ["uvloop (>=0.15.2)"]
+
+[[package]]
+name = "cachetools"
+version = "5.2.0"
+description = "Extensible memoizing collections and decorators"
+category = "main"
+optional = false
+python-versions = "~=3.7"
+
+[[package]]
+name = "certifi"
+version = "2022.9.24"
+description = "Python package for providing Mozilla's CA Bundle."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "cfgv"
+version = "3.3.1"
+description = "Validate configuration and produce human readable error messages."
+category = "dev"
+optional = false
+python-versions = ">=3.6.1"
+
+[[package]]
+name = "charset-normalizer"
+version = "2.1.1"
+description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.extras]
+unicode_backport = ["unicodedata2"]
+
+[[package]]
+name = "click"
+version = "8.1.3"
+description = "Composable command line interface toolkit"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
+
+[[package]]
+name = "colorama"
+version = "0.4.5"
+description = "Cross-platform colored terminal text."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "colorlog"
+version = "6.7.0"
+description = "Add colours to the output of Python's logging module."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+colorama = {version = "*", markers = "sys_platform == \"win32\""}
+
+[package.extras]
+development = ["black", "flake8", "mypy", "pytest", "types-colorama"]
+
+[[package]]
+name = "coverage"
+version = "6.5.0"
+description = "Code coverage measurement for Python"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+tomli = {version = "*", optional = true, markers = "python_full_version <= \"3.11.0a6\" and extra == \"toml\""}
+
+[package.extras]
+toml = ["tomli"]
+
+[[package]]
+name = "darglint"
+version = "1.8.1"
+description = "A utility for ensuring Google-style docstrings stay up to date with the source code."
+category = "dev"
+optional = false
+python-versions = ">=3.6,<4.0"
+
+[[package]]
+name = "distlib"
+version = "0.3.6"
+description = "Distribution utilities"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "docutils"
+version = "0.17.1"
+description = "Docutils -- Python Documentation Utilities"
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "dparse"
+version = "0.6.2"
+description = "A parser for Python dependency files"
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+packaging = "*"
+toml = "*"
+
+[package.extras]
+pipenv = ["pipenv"]
+conda = ["pyyaml"]
+
+[[package]]
+name = "filelock"
+version = "3.8.0"
+description = "A platform independent file lock."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+docs = ["furo (>=2022.6.21)", "sphinx (>=5.1.1)", "sphinx-autodoc-typehints (>=1.19.1)"]
+testing = ["covdefaults (>=2.2)", "coverage (>=6.4.2)", "pytest (>=7.1.2)", "pytest-cov (>=3)", "pytest-timeout (>=2.1)"]
+
+[[package]]
+name = "flake8"
+version = "5.0.4"
+description = "the modular source code checker: pep8 pyflakes and co"
+category = "dev"
+optional = false
+python-versions = ">=3.6.1"
+
+[package.dependencies]
+importlib-metadata = {version = ">=1.1.0,<4.3", markers = "python_version < \"3.8\""}
+mccabe = ">=0.7.0,<0.8.0"
+pycodestyle = ">=2.9.0,<2.10.0"
+pyflakes = ">=2.5.0,<2.6.0"
+
+[[package]]
+name = "flake8-bandit"
+version = "4.1.1"
+description = "Automated security testing with bandit and flake8."
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+bandit = ">=1.7.3"
+flake8 = ">=5.0.0"
+
+[[package]]
+name = "flake8-bugbear"
+version = "22.9.23"
+description = "A plugin for flake8 finding likely bugs and design problems in your program. Contains warnings that don't belong in pyflakes and pycodestyle."
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+attrs = ">=19.2.0"
+flake8 = ">=3.0.0"
+
+[package.extras]
+dev = ["coverage", "hypothesis", "hypothesmith (>=0.2)", "pre-commit"]
+
+[[package]]
+name = "flake8-docstrings"
+version = "1.6.0"
+description = "Extension for flake8 which uses pydocstyle to check docstrings"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+flake8 = ">=3"
+pydocstyle = ">=2.1"
+
+[[package]]
+name = "flake8-rst-docstrings"
+version = "0.2.7"
+description = "Python docstring reStructuredText (RST) validator"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+flake8 = ">=3.0.0"
+pygments = "*"
+restructuredtext-lint = "*"
+
+[[package]]
+name = "furo"
+version = "2022.9.29"
+description = "A clean customisable Sphinx documentation theme."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+beautifulsoup4 = "*"
+pygments = ">=2.7"
+sphinx = ">=4.0,<6.0"
+sphinx-basic-ng = "*"
+
+[[package]]
+name = "gitdb"
+version = "4.0.9"
+description = "Git Object Database"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+smmap = ">=3.0.1,<6"
+
+[[package]]
+name = "gitpython"
+version = "3.1.29"
+description = "GitPython is a python library used to interact with Git repositories"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+gitdb = ">=4.0.1,<5"
+typing-extensions = {version = ">=3.7.4.3", markers = "python_version < \"3.8\""}
+
+[[package]]
+name = "google-api-core"
+version = "2.10.2"
+description = "Google API client core library"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+google-auth = ">=1.25.0,<3.0dev"
+googleapis-common-protos = ">=1.56.2,<2.0dev"
+protobuf = ">=3.19.5,<3.20.0 || >3.20.0,<3.20.1 || >3.20.1,<4.21.0 || >4.21.0,<4.21.1 || >4.21.1,<4.21.2 || >4.21.2,<4.21.3 || >4.21.3,<4.21.4 || >4.21.4,<4.21.5 || >4.21.5,<5.0.0dev"
+requests = ">=2.18.0,<3.0.0dev"
+
+[package.extras]
+grpc = ["grpcio (>=1.33.2,<2.0dev)", "grpcio-status (>=1.33.2,<2.0dev)"]
+grpcgcp = ["grpcio-gcp (>=0.2.2,<1.0dev)"]
+grpcio-gcp = ["grpcio-gcp (>=0.2.2,<1.0dev)"]
+
+[[package]]
+name = "google-api-python-client"
+version = "2.65.0"
+description = "Google API Client Library for Python"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+google-api-core = ">=1.31.5,<2.0.0 || >2.3.0,<3.0.0dev"
+google-auth = ">=1.19.0,<3.0.0dev"
+google-auth-httplib2 = ">=0.1.0"
+httplib2 = ">=0.15.0,<1dev"
+uritemplate = ">=3.0.1,<5"
+
+[[package]]
+name = "google-auth"
+version = "2.13.0"
+description = "Google Authentication Library"
+category = "main"
+optional = false
+python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*"
+
+[package.dependencies]
+cachetools = ">=2.0.0,<6.0"
+pyasn1-modules = ">=0.2.1"
+rsa = {version = ">=3.1.4,<5", markers = "python_version >= \"3.6\""}
+six = ">=1.9.0"
+
+[package.extras]
+aiohttp = ["requests (>=2.20.0,<3.0.0dev)", "aiohttp (>=3.6.2,<4.0.0dev)"]
+enterprise_cert = ["cryptography (==36.0.2)", "pyopenssl (==22.0.0)"]
+pyopenssl = ["pyopenssl (>=20.0.0)"]
+reauth = ["pyu2f (>=0.1.5)"]
+
+[[package]]
+name = "google-auth-httplib2"
+version = "0.1.0"
+description = "Google Authentication Library: httplib2 transport"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+google-auth = "*"
+httplib2 = ">=0.15.0"
+six = "*"
+
+[[package]]
+name = "google-auth-oauthlib"
+version = "0.5.3"
+description = "Google Authentication Library"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+google-auth = ">=1.0.0"
+requests-oauthlib = ">=0.7.0"
+
+[package.extras]
+tool = ["click (>=6.0.0)"]
+
+[[package]]
+name = "googleapis-common-protos"
+version = "1.56.4"
+description = "Common protobufs used in Google APIs"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+protobuf = ">=3.15.0,<5.0.0dev"
+
+[package.extras]
+grpc = ["grpcio (>=1.0.0,<2.0.0dev)"]
+
+[[package]]
+name = "httplib2"
+version = "0.20.4"
+description = "A comprehensive HTTP client library."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[package.dependencies]
+pyparsing = {version = ">=2.4.2,<3.0.0 || >3.0.0,<3.0.1 || >3.0.1,<3.0.2 || >3.0.2,<3.0.3 || >3.0.3,<4", markers = "python_version > \"3.0\""}
+
+[[package]]
+name = "identify"
+version = "2.5.6"
+description = "File identification library for Python"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+license = ["ukkonen"]
+
+[[package]]
+name = "idna"
+version = "3.4"
+description = "Internationalized Domain Names in Applications (IDNA)"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
+name = "imagesize"
+version = "1.4.1"
+description = "Getting image size from png/jpeg/jpeg2000/gif file"
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
+name = "importlib-metadata"
+version = "4.2.0"
+description = "Read metadata from Python packages"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+typing-extensions = {version = ">=3.6.4", markers = "python_version < \"3.8\""}
+zipp = ">=0.5"
+
+[package.extras]
+docs = ["sphinx", "jaraco.packaging (>=8.2)", "rst.linker (>=1.9)"]
+testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-cov", "pytest-enabler (>=1.0.1)", "packaging", "pep517", "pyfakefs", "flufl.flake8", "pytest-black (>=0.3.7)", "pytest-mypy", "importlib-resources (>=1.3)"]
+
+[[package]]
+name = "iniconfig"
+version = "1.1.1"
+description = "iniconfig: brain-dead simple config-ini parsing"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "isort"
+version = "5.10.1"
+description = "A Python utility / library to sort Python imports."
+category = "dev"
+optional = false
+python-versions = ">=3.6.1,<4.0"
+
+[package.extras]
+pipfile_deprecated_finder = ["pipreqs", "requirementslib"]
+requirements_deprecated_finder = ["pipreqs", "pip-api"]
+colors = ["colorama (>=0.4.3,<0.5.0)"]
+plugins = ["setuptools"]
+
+[[package]]
+name = "jinja2"
+version = "3.1.2"
+description = "A very fast and expressive template engine."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+MarkupSafe = ">=2.0"
+
+[package.extras]
+i18n = ["Babel (>=2.7)"]
+
+[[package]]
+name = "keyboard"
+version = "0.13.5"
+description = "Hook and simulate keyboard events on Windows and Linux"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+pyobjc = {version = "*", markers = "sys_platform == \"darwin\""}
+
+[[package]]
+name = "livereload"
+version = "2.6.3"
+description = "Python LiveReload is an awesome tool for web developers"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+six = "*"
+tornado = {version = "*", markers = "python_version > \"2.7\""}
+
+[[package]]
+name = "markdown-it-py"
+version = "2.1.0"
+description = "Python port of markdown-it. Markdown parsing, done right!"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+mdurl = ">=0.1,<1.0"
+typing_extensions = {version = ">=3.7.4", markers = "python_version < \"3.8\""}
+
+[package.extras]
+testing = ["pytest-regressions", "pytest-cov", "pytest", "coverage"]
+rtd = ["sphinx-book-theme", "sphinx-design", "sphinx-copybutton", "sphinx", "pyyaml", "myst-parser", "attrs"]
+profiling = ["gprof2dot"]
+plugins = ["mdit-py-plugins"]
+linkify = ["linkify-it-py (>=1.0,<2.0)"]
+compare = ["panflute (>=2.1.3,<2.2.0)", "mistune (>=2.0.2,<2.1.0)", "mistletoe (>=0.8.1,<0.9.0)", "markdown (>=3.3.6,<3.4.0)", "commonmark (>=0.9.1,<0.10.0)"]
+code_style = ["pre-commit (==2.6)"]
+benchmarking = ["pytest-benchmark (>=3.2,<4.0)", "pytest", "psutil"]
+
+[[package]]
+name = "markupsafe"
+version = "2.1.1"
+description = "Safely add untrusted strings to HTML/XML markup."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "mccabe"
+version = "0.7.0"
+description = "McCabe checker, plugin for flake8"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "mdit-py-plugins"
+version = "0.3.1"
+description = "Collection of plugins for markdown-it-py"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+markdown-it-py = ">=1.0.0,<3.0.0"
+
+[package.extras]
+testing = ["pytest-regressions", "pytest-cov", "pytest", "coverage"]
+rtd = ["sphinx-book-theme (>=0.1.0,<0.2.0)", "myst-parser (>=0.16.1,<0.17.0)", "attrs"]
+code_style = ["pre-commit"]
+
+[[package]]
+name = "mdurl"
+version = "0.1.2"
+description = "Markdown URL utilities"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "mido"
+version = "1.2.10"
+description = "MIDI Objects for Python"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+dev = ["check-manifest (>=0.35)", "flake8 (>=3.4.1)", "pytest (>=3.2.2)", "sphinx (>=1.6.3)", "tox (>=2.8.2)"]
+ports = ["python-rtmidi (>=1.1.0)"]
+
+[[package]]
+name = "mypy"
+version = "0.982"
+description = "Optional static typing for Python"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+mypy-extensions = ">=0.4.3"
+tomli = {version = ">=1.1.0", markers = "python_version < \"3.11\""}
+typed-ast = {version = ">=1.4.0,<2", markers = "python_version < \"3.8\""}
+typing-extensions = ">=3.10"
+
+[package.extras]
+dmypy = ["psutil (>=4.0)"]
+python2 = ["typed-ast (>=1.4.0,<2)"]
+reports = ["lxml"]
+
+[[package]]
+name = "mypy-extensions"
+version = "0.4.3"
+description = "Experimental type system extensions for programs checked with the mypy typechecker."
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "myst-parser"
+version = "0.18.1"
+description = "An extended commonmark compliant parser, with bridges to docutils & sphinx."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+docutils = ">=0.15,<0.20"
+jinja2 = "*"
+markdown-it-py = ">=1.0.0,<3.0.0"
+mdit-py-plugins = ">=0.3.1,<0.4.0"
+pyyaml = "*"
+sphinx = ">=4,<6"
+typing-extensions = "*"
+
+[package.extras]
+code_style = ["pre-commit (>=2.12,<3.0)"]
+linkify = ["linkify-it-py (>=1.0,<2.0)"]
+rtd = ["ipython", "sphinx-book-theme", "sphinx-design", "sphinxext-rediraffe (>=0.2.7,<0.3.0)", "sphinxcontrib.mermaid (>=0.7.1,<0.8.0)", "sphinxext-opengraph (>=0.6.3,<0.7.0)"]
+testing = ["beautifulsoup4", "coverage", "pytest (>=6,<7)", "pytest-cov", "pytest-regressions", "pytest-param-files (>=0.3.4,<0.4.0)", "sphinx-pytest", "sphinx (<5.2)"]
+
+[[package]]
+name = "nodeenv"
+version = "1.7.0"
+description = "Node.js virtual environment builder"
+category = "dev"
+optional = false
+python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*"
+
+[[package]]
+name = "nox"
+version = "2022.8.7"
+description = "Flexible test automation."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+argcomplete = ">=1.9.4,<3.0"
+colorlog = ">=2.6.1,<7.0.0"
+importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
+packaging = ">=20.9"
+py = ">=1.4,<2.0.0"
+typing-extensions = {version = ">=3.7.4", markers = "python_version < \"3.8\""}
+virtualenv = ">=14"
+
+[package.extras]
+tox_to_nox = ["jinja2", "tox"]
+
+[[package]]
+name = "nox-poetry"
+version = "1.0.1"
+description = "nox-poetry"
+category = "main"
+optional = false
+python-versions = ">=3.7,<4.0"
+
+[package.dependencies]
+nox = ">=2020.8.22"
+packaging = ">=20.9"
+tomlkit = ">=0.7"
+
+[[package]]
+name = "oauthlib"
+version = "3.2.2"
+description = "A generic, spec-compliant, thorough implementation of the OAuth request-signing logic"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+rsa = ["cryptography (>=3.0.0)"]
+signals = ["blinker (>=1.4.0)"]
+signedtoken = ["cryptography (>=3.0.0)", "pyjwt (>=2.0.0,<3)"]
+
+[[package]]
+name = "packaging"
+version = "21.3"
+description = "Core utilities for Python packages"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyparsing = ">=2.0.2,<3.0.5 || >3.0.5"
+
+[[package]]
+name = "pathspec"
+version = "0.10.1"
+description = "Utility library for gitignore style pattern matching of file paths."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "pbr"
+version = "5.11.0"
+description = "Python Build Reasonableness"
+category = "dev"
+optional = false
+python-versions = ">=2.6"
+
+[[package]]
+name = "pep8-naming"
+version = "0.13.2"
+description = "Check PEP-8 naming conventions, plugin for flake8"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+flake8 = ">=3.9.1"
+
+[[package]]
+name = "platformdirs"
+version = "2.5.2"
+description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+docs = ["furo (>=2021.7.5b38)", "proselint (>=0.10.2)", "sphinx-autodoc-typehints (>=1.12)", "sphinx (>=4)"]
+test = ["appdirs (==1.4.4)", "pytest-cov (>=2.7)", "pytest-mock (>=3.6)", "pytest (>=6)"]
+
+[[package]]
+name = "pluggy"
+version = "1.0.0"
+description = "plugin and hook calling mechanisms for python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+importlib-metadata = {version = ">=0.12", markers = "python_version < \"3.8\""}
+
+[package.extras]
+testing = ["pytest-benchmark", "pytest"]
+dev = ["tox", "pre-commit"]
+
+[[package]]
+name = "pre-commit"
+version = "2.20.0"
+description = "A framework for managing and maintaining multi-language pre-commit hooks."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+cfgv = ">=2.0.0"
+identify = ">=1.0.0"
+importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
+nodeenv = ">=0.11.1"
+pyyaml = ">=5.1"
+toml = "*"
+virtualenv = ">=20.0.8"
+
+[[package]]
+name = "pre-commit-hooks"
+version = "4.3.0"
+description = "Some out-of-the-box hooks for pre-commit."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+"ruamel.yaml" = ">=0.15"
+tomli = {version = ">=1.1.0", markers = "python_version < \"3.11\""}
+
+[[package]]
+name = "protobuf"
+version = "4.21.8"
+description = ""
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "py"
+version = "1.11.0"
+description = "library with cross-python path, ini-parsing, io, code, log facilities"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "pyasn1"
+version = "0.4.8"
+description = "ASN.1 types and codecs"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "pyasn1-modules"
+version = "0.2.8"
+description = "A collection of ASN.1-based protocols modules."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+pyasn1 = ">=0.4.6,<0.5.0"
+
+[[package]]
+name = "pycodestyle"
+version = "2.9.1"
+description = "Python style guide checker"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "pydocstyle"
+version = "6.1.1"
+description = "Python docstring style checker"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+snowballstemmer = "*"
+
+[package.extras]
+toml = ["toml"]
+
+[[package]]
+name = "pyflakes"
+version = "2.5.0"
+description = "passive checker of Python programs"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "pygments"
+version = "2.13.0"
+description = "Pygments is a syntax highlighting package written in Python."
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+plugins = ["importlib-metadata"]
+
+[[package]]
+name = "pyobjc"
+version = "8.5.1"
+description = "Python<->ObjC Interoperability Module"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = "8.5.1"
+pyobjc-framework-Accessibility = {version = "8.5.1", markers = "platform_release >= \"20.0\""}
+pyobjc-framework-Accounts = {version = "8.5.1", markers = "platform_release >= \"12.0\""}
+pyobjc-framework-AddressBook = "8.5.1"
+pyobjc-framework-AdServices = {version = "8.5.1", markers = "platform_release >= \"20.0\""}
+pyobjc-framework-AdSupport = {version = "8.5.1", markers = "platform_release >= \"18.0\""}
+pyobjc-framework-AppleScriptKit = "8.5.1"
+pyobjc-framework-AppleScriptObjC = {version = "8.5.1", markers = "platform_release >= \"10.0\""}
+pyobjc-framework-ApplicationServices = "8.5.1"
+pyobjc-framework-AppTrackingTransparency = {version = "8.5.1", markers = "platform_release >= \"20.0\""}
+pyobjc-framework-AudioVideoBridging = {version = "8.5.1", markers = "platform_release >= \"12.0\""}
+pyobjc-framework-AuthenticationServices = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-AutomaticAssessmentConfiguration = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-Automator = "8.5.1"
+pyobjc-framework-AVFoundation = {version = "8.5.1", markers = "platform_release >= \"11.0\""}
+pyobjc-framework-AVKit = {version = "8.5.1", markers = "platform_release >= \"13.0\""}
+pyobjc-framework-BusinessChat = {version = "8.5.1", markers = "platform_release >= \"18.0\""}
+pyobjc-framework-CalendarStore = {version = "8.5.1", markers = "platform_release >= \"9.0\""}
+pyobjc-framework-CallKit = {version = "8.5.1", markers = "platform_release >= \"20.0\""}
+pyobjc-framework-CFNetwork = "8.5.1"
+pyobjc-framework-ClassKit = {version = "8.5.1", markers = "platform_release >= \"20.0\""}
+pyobjc-framework-CloudKit = {version = "8.5.1", markers = "platform_release >= \"14.0\""}
+pyobjc-framework-Cocoa = "8.5.1"
+pyobjc-framework-Collaboration = {version = "8.5.1", markers = "platform_release >= \"9.0\""}
+pyobjc-framework-ColorSync = {version = "8.5.1", markers = "platform_release >= \"17.0\""}
+pyobjc-framework-Contacts = {version = "8.5.1", markers = "platform_release >= \"15.0\""}
+pyobjc-framework-ContactsUI = {version = "8.5.1", markers = "platform_release >= \"15.0\""}
+pyobjc-framework-CoreAudio = "8.5.1"
+pyobjc-framework-CoreAudioKit = "8.5.1"
+pyobjc-framework-CoreBluetooth = {version = "8.5.1", markers = "platform_release >= \"14.0\""}
+pyobjc-framework-CoreData = "8.5.1"
+pyobjc-framework-CoreHaptics = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-CoreLocation = {version = "8.5.1", markers = "platform_release >= \"10.0\""}
+pyobjc-framework-CoreMedia = {version = "8.5.1", markers = "platform_release >= \"11.0\""}
+pyobjc-framework-CoreMediaIO = {version = "8.5.1", markers = "platform_release >= \"11.0\""}
+pyobjc-framework-CoreMIDI = "8.5.1"
+pyobjc-framework-CoreML = {version = "8.5.1", markers = "platform_release >= \"17.0\""}
+pyobjc-framework-CoreMotion = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-CoreServices = "8.5.1"
+pyobjc-framework-CoreSpotlight = {version = "8.5.1", markers = "platform_release >= \"17.0\""}
+pyobjc-framework-CoreText = "8.5.1"
+pyobjc-framework-CoreWLAN = {version = "8.5.1", markers = "platform_release >= \"10.0\""}
+pyobjc-framework-CryptoTokenKit = {version = "8.5.1", markers = "platform_release >= \"14.0\""}
+pyobjc-framework-DataDetection = {version = "8.5.1", markers = "platform_release >= \"21.0\""}
+pyobjc-framework-DeviceCheck = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-DictionaryServices = {version = "8.5.1", markers = "platform_release >= \"9.0\""}
+pyobjc-framework-DiscRecording = "8.5.1"
+pyobjc-framework-DiscRecordingUI = "8.5.1"
+pyobjc-framework-DiskArbitration = "8.5.1"
+pyobjc-framework-DVDPlayback = "8.5.1"
+pyobjc-framework-EventKit = {version = "8.5.1", markers = "platform_release >= \"12.0\""}
+pyobjc-framework-ExceptionHandling = "8.5.1"
+pyobjc-framework-ExecutionPolicy = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-ExternalAccessory = {version = "8.5.1", markers = "platform_release >= \"17.0\""}
+pyobjc-framework-FileProvider = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-FileProviderUI = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-FinderSync = {version = "8.5.1", markers = "platform_release >= \"14.0\""}
+pyobjc-framework-FSEvents = {version = "8.5.1", markers = "platform_release >= \"9.0\""}
+pyobjc-framework-GameCenter = {version = "8.5.1", markers = "platform_release >= \"12.0\""}
+pyobjc-framework-GameController = {version = "8.5.1", markers = "platform_release >= \"13.0\""}
+pyobjc-framework-GameKit = {version = "8.5.1", markers = "platform_release >= \"12.0\""}
+pyobjc-framework-GameplayKit = {version = "8.5.1", markers = "platform_release >= \"15.0\""}
+pyobjc-framework-ImageCaptureCore = {version = "8.5.1", markers = "platform_release >= \"10.0\""}
+pyobjc-framework-IMServicePlugIn = {version = "8.5.1", markers = "platform_release >= \"11.0\""}
+pyobjc-framework-InputMethodKit = {version = "8.5.1", markers = "platform_release >= \"9.0\""}
+pyobjc-framework-InstallerPlugins = "8.5.1"
+pyobjc-framework-InstantMessage = {version = "8.5.1", markers = "platform_release >= \"9.0\""}
+pyobjc-framework-Intents = {version = "8.5.1", markers = "platform_release >= \"16.0\""}
+pyobjc-framework-IntentsUI = {version = "8.5.1", markers = "platform_release >= \"21.0\""}
+pyobjc-framework-IOSurface = {version = "8.5.1", markers = "platform_release >= \"10.0\""}
+pyobjc-framework-iTunesLibrary = {version = "8.5.1", markers = "platform_release >= \"10.0\""}
+pyobjc-framework-KernelManagement = {version = "8.5.1", markers = "platform_release >= \"20.0\""}
+pyobjc-framework-LatentSemanticMapping = "8.5.1"
+pyobjc-framework-LaunchServices = "8.5.1"
+pyobjc-framework-libdispatch = {version = "8.5.1", markers = "platform_release >= \"12.0\""}
+pyobjc-framework-LinkPresentation = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-LocalAuthentication = {version = "8.5.1", markers = "platform_release >= \"14.0\""}
+pyobjc-framework-LocalAuthenticationEmbeddedUI = {version = "8.5.1", markers = "platform_release >= \"21.0\""}
+pyobjc-framework-MailKit = {version = "8.5.1", markers = "platform_release >= \"21.0\""}
+pyobjc-framework-MapKit = {version = "8.5.1", markers = "platform_release >= \"13.0\""}
+pyobjc-framework-MediaAccessibility = {version = "8.5.1", markers = "platform_release >= \"13.0\""}
+pyobjc-framework-MediaLibrary = {version = "8.5.1", markers = "platform_release >= \"13.0\""}
+pyobjc-framework-MediaPlayer = {version = "8.5.1", markers = "platform_release >= \"16.0\""}
+pyobjc-framework-MediaToolbox = {version = "8.5.1", markers = "platform_release >= \"13.0\""}
+pyobjc-framework-Message = {version = "8.5.1", markers = "platform_release < \"13.0\""}
+pyobjc-framework-Metal = {version = "8.5.1", markers = "platform_release >= \"15.0\""}
+pyobjc-framework-MetalKit = {version = "8.5.1", markers = "platform_release >= \"15.0\""}
+pyobjc-framework-MetalPerformanceShaders = {version = "8.5.1", markers = "platform_release >= \"17.0\""}
+pyobjc-framework-MetalPerformanceShadersGraph = {version = "8.5.1", markers = "platform_release >= \"20.0\""}
+pyobjc-framework-MetricKit = {version = "8.5.1", markers = "platform_release >= \"21.0\""}
+pyobjc-framework-MLCompute = {version = "8.5.1", markers = "platform_release >= \"20.0\""}
+pyobjc-framework-ModelIO = {version = "8.5.1", markers = "platform_release >= \"15.0\""}
+pyobjc-framework-MultipeerConnectivity = {version = "8.5.1", markers = "platform_release >= \"14.0\""}
+pyobjc-framework-NaturalLanguage = {version = "8.5.1", markers = "platform_release >= \"18.0\""}
+pyobjc-framework-NetFS = {version = "8.5.1", markers = "platform_release >= \"10.0\""}
+pyobjc-framework-Network = {version = "8.5.1", markers = "platform_release >= \"18.0\""}
+pyobjc-framework-NetworkExtension = {version = "8.5.1", markers = "platform_release >= \"15.0\""}
+pyobjc-framework-NotificationCenter = {version = "8.5.1", markers = "platform_release >= \"14.0\""}
+pyobjc-framework-OpenDirectory = {version = "8.5.1", markers = "platform_release >= \"10.0\""}
+pyobjc-framework-OSAKit = "8.5.1"
+pyobjc-framework-OSLog = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-PassKit = {version = "8.5.1", markers = "platform_release >= \"20.0\""}
+pyobjc-framework-PencilKit = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-Photos = {version = "8.5.1", markers = "platform_release >= \"15.0\""}
+pyobjc-framework-PhotosUI = {version = "8.5.1", markers = "platform_release >= \"15.0\""}
+pyobjc-framework-PreferencePanes = "8.5.1"
+pyobjc-framework-PubSub = {version = "8.5.1", markers = "platform_release >= \"9.0\" and platform_release < \"18.0\""}
+pyobjc-framework-PushKit = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-Quartz = "8.5.1"
+pyobjc-framework-QuickLookThumbnailing = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-ReplayKit = {version = "8.5.1", markers = "platform_release >= \"20.0\""}
+pyobjc-framework-SafariServices = {version = "8.5.1", markers = "platform_release >= \"15.0\""}
+pyobjc-framework-SceneKit = {version = "8.5.1", markers = "platform_release >= \"11.0\""}
+pyobjc-framework-ScreenCaptureKit = {version = "8.5.1", markers = "platform_release >= \"21.4\""}
+pyobjc-framework-ScreenSaver = "8.5.1"
+pyobjc-framework-ScreenTime = {version = "8.5.1", markers = "platform_release >= \"20.0\""}
+pyobjc-framework-ScriptingBridge = {version = "8.5.1", markers = "platform_release >= \"9.0\""}
+pyobjc-framework-SearchKit = "8.5.1"
+pyobjc-framework-Security = "8.5.1"
+pyobjc-framework-SecurityFoundation = "8.5.1"
+pyobjc-framework-SecurityInterface = "8.5.1"
+pyobjc-framework-ServerNotification = {version = "8.5.1", markers = "platform_release >= \"10.0\" and platform_release < \"13.0\""}
+pyobjc-framework-ServiceManagement = {version = "8.5.1", markers = "platform_release >= \"10.0\""}
+pyobjc-framework-ShazamKit = {version = "8.5.1", markers = "platform_release >= \"21.0\""}
+pyobjc-framework-Social = {version = "8.5.1", markers = "platform_release >= \"12.0\""}
+pyobjc-framework-SoundAnalysis = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-Speech = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-SpriteKit = {version = "8.5.1", markers = "platform_release >= \"13.0\""}
+pyobjc-framework-StoreKit = {version = "8.5.1", markers = "platform_release >= \"11.0\""}
+pyobjc-framework-SyncServices = "8.5.1"
+pyobjc-framework-SystemConfiguration = "8.5.1"
+pyobjc-framework-SystemExtensions = {version = "8.5.1", markers = "platform_release >= \"19.0\""}
+pyobjc-framework-UniformTypeIdentifiers = {version = "8.5.1", markers = "platform_release >= \"20.0\""}
+pyobjc-framework-UserNotifications = {version = "8.5.1", markers = "platform_release >= \"18.0\""}
+pyobjc-framework-UserNotificationsUI = {version = "8.5.1", markers = "platform_release >= \"20.0\""}
+pyobjc-framework-VideoSubscriberAccount = {version = "8.5.1", markers = "platform_release >= \"18.0\""}
+pyobjc-framework-VideoToolbox = {version = "8.5.1", markers = "platform_release >= \"12.0\""}
+pyobjc-framework-Virtualization = {version = "8.5.1", markers = "platform_release >= \"20.0\""}
+pyobjc-framework-Vision = {version = "8.5.1", markers = "platform_release >= \"17.0\""}
+pyobjc-framework-WebKit = "8.5.1"
+
+[package.extras]
+allbindings = ["pyobjc-core (==8.5.1)", "pyobjc-framework-libdispatch (==8.5.1)", "pyobjc-framework-Accessibility (==8.5.1)", "pyobjc-framework-AdServices (==8.5.1)", "pyobjc-framework-AdSupport (==8.5.1)", "pyobjc-framework-AppTrackingTransparency (==8.5.1)", "pyobjc-framework-AudioVideoBridging (==8.5.1)", "pyobjc-framework-AuthenticationServices (==8.5.1)", "pyobjc-framework-AutomaticAssessmentConfiguration (==8.5.1)", "pyobjc-framework-AVKit (==8.5.1)", "pyobjc-framework-AVFoundation (==8.5.1)", "pyobjc-framework-Accounts (==8.5.1)", "pyobjc-framework-AddressBook (==8.5.1)", "pyobjc-framework-AppleScriptKit (==8.5.1)", "pyobjc-framework-AppleScriptObjC (==8.5.1)", "pyobjc-framework-ApplicationServices (==8.5.1)", "pyobjc-framework-Automator (==8.5.1)", "pyobjc-framework-BusinessChat (==8.5.1)", "pyobjc-framework-CFNetwork (==8.5.1)", "pyobjc-framework-CalendarStore (==8.5.1)", "pyobjc-framework-CallKit (==8.5.1)", "pyobjc-framework-ClassKit (==8.5.1)", "pyobjc-framework-CloudKit (==8.5.1)", "pyobjc-framework-Cocoa (==8.5.1)", "pyobjc-framework-Collaboration (==8.5.1)", "pyobjc-framework-ColorSync (==8.5.1)", "pyobjc-framework-Contacts (==8.5.1)", "pyobjc-framework-ContactsUI (==8.5.1)", "pyobjc-framework-CoreAudio (==8.5.1)", "pyobjc-framework-CoreAudioKit (==8.5.1)", "pyobjc-framework-CoreBluetooth (==8.5.1)", "pyobjc-framework-CoreData (==8.5.1)", "pyobjc-framework-CoreHaptics (==8.5.1)", "pyobjc-framework-CoreLocation (==8.5.1)", "pyobjc-framework-CoreMedia (==8.5.1)", "pyobjc-framework-CoreMediaIO (==8.5.1)", "pyobjc-framework-CoreMIDI (==8.5.1)", "pyobjc-framework-CoreML (==8.5.1)", "pyobjc-framework-CoreMotion (==8.5.1)", "pyobjc-framework-CoreServices (==8.5.1)", "pyobjc-framework-CoreSpotlight (==8.5.1)", "pyobjc-framework-CoreText (==8.5.1)", "pyobjc-framework-CoreWLAN (==8.5.1)", "pyobjc-framework-CryptoTokenKit (==8.5.1)", "pyobjc-framework-DataDetection (==8.5.1)", "pyobjc-framework-DeviceCheck (==8.5.1)", "pyobjc-framework-DictionaryServices (==8.5.1)", "pyobjc-framework-DiscRecording (==8.5.1)", "pyobjc-framework-DiscRecordingUI (==8.5.1)", "pyobjc-framework-DiskArbitration (==8.5.1)", "pyobjc-framework-DVDPlayback (==8.5.1)", "pyobjc-framework-EventKit (==8.5.1)", "pyobjc-framework-ExceptionHandling (==8.5.1)", "pyobjc-framework-ExecutionPolicy (==8.5.1)", "pyobjc-framework-ExternalAccessory (==8.5.1)", "pyobjc-framework-FileProvider (==8.5.1)", "pyobjc-framework-FileProviderUI (==8.5.1)", "pyobjc-framework-FSEvents (==8.5.1)", "pyobjc-framework-FinderSync (==8.5.1)", "pyobjc-framework-GameCenter (==8.5.1)", "pyobjc-framework-GameController (==8.5.1)", "pyobjc-framework-IMServicePlugIn (==8.5.1)", "pyobjc-framework-InputMethodKit (==8.5.1)", "pyobjc-framework-ImageCaptureCore (==8.5.1)", "pyobjc-framework-Intents (==8.5.1)", "pyobjc-framework-IntentsUI (==8.5.1)", "pyobjc-framework-InstallerPlugins (==8.5.1)", "pyobjc-framework-InstantMessage (==8.5.1)", "pyobjc-framework-IOSurface (==8.5.1)", "pyobjc-framework-KernelManagement (==8.5.1)", "pyobjc-framework-LatentSemanticMapping (==8.5.1)", "pyobjc-framework-LaunchServices (==8.5.1)", "pyobjc-framework-LinkPresentation (==8.5.1)", "pyobjc-framework-LocalAuthentication (==8.5.1)", "pyobjc-framework-LocalAuthenticationEmbeddedUI (==8.5.1)", "pyobjc-framework-MailKit (==8.5.1)", "pyobjc-framework-MapKit (==8.5.1)", "pyobjc-framework-MediaAccessibility (==8.5.1)", "pyobjc-framework-MediaLibrary (==8.5.1)", "pyobjc-framework-MediaPlayer (==8.5.1)", "pyobjc-framework-MediaToolbox (==8.5.1)", "pyobjc-framework-Message (==8.5.1)", "pyobjc-framework-Metal (==8.5.1)", "pyobjc-framework-MetalKit (==8.5.1)", "pyobjc-framework-MetalPerformanceShaders (==8.5.1)", "pyobjc-framework-MetalPerformanceShadersGraph (==8.5.1)", "pyobjc-framework-MetricKit (==8.5.1)", "pyobjc-framework-MLCompute (==8.5.1)", "pyobjc-framework-ModelIO (==8.5.1)", "pyobjc-framework-MultipeerConnectivity (==8.5.1)", "pyobjc-framework-NaturalLanguage (==8.5.1)", "pyobjc-framework-NetFS (==8.5.1)", "pyobjc-framework-Network (==8.5.1)", "pyobjc-framework-NetworkExtension (==8.5.1)", "pyobjc-framework-NotificationCenter (==8.5.1)", "pyobjc-framework-OpenDirectory (==8.5.1)", "pyobjc-framework-OSAKit (==8.5.1)", "pyobjc-framework-OSLog (==8.5.1)", "pyobjc-framework-PassKit (==8.5.1)", "pyobjc-framework-PencilKit (==8.5.1)", "pyobjc-framework-Photos (==8.5.1)", "pyobjc-framework-PhotosUI (==8.5.1)", "pyobjc-framework-PreferencePanes (==8.5.1)", "pyobjc-framework-PubSub (==8.5.1)", "pyobjc-framework-PushKit (==8.5.1)", "pyobjc-framework-Quartz (==8.5.1)", "pyobjc-framework-QuickLookThumbnailing (==8.5.1)", "pyobjc-framework-ReplayKit (==8.5.1)", "pyobjc-framework-SafariServices (==8.5.1)", "pyobjc-framework-ScreenSaver (==8.5.1)", "pyobjc-framework-ScreenTime (==8.5.1)", "pyobjc-framework-ScriptingBridge (==8.5.1)", "pyobjc-framework-Security (==8.5.1)", "pyobjc-framework-SecurityFoundation (==8.5.1)", "pyobjc-framework-SecurityInterface (==8.5.1)", "pyobjc-framework-SearchKit (==8.5.1)", "pyobjc-framework-ServerNotification (==8.5.1)", "pyobjc-framework-ServiceManagement (==8.5.1)", "pyobjc-framework-ShazamKit (==8.5.1)", "pyobjc-framework-Social (==8.5.1)", "pyobjc-framework-Speech (==8.5.1)", "pyobjc-framework-SpriteKit (==8.5.1)", "pyobjc-framework-StoreKit (==8.5.1)", "pyobjc-framework-SyncServices (==8.5.1)", "pyobjc-framework-SystemConfiguration (==8.5.1)", "pyobjc-framework-WebKit (==8.5.1)", "pyobjc-framework-GameKit (==8.5.1)", "pyobjc-framework-GameplayKit (==8.5.1)", "pyobjc-framework-SceneKit (==8.5.1)", "pyobjc-framework-SoundAnalysis (==8.5.1)", "pyobjc-framework-ScreenCaptureKit (==8.5.1)", "pyobjc-framework-SystemExtensions (==8.5.1)", "pyobjc-framework-UniformTypeIdentifiers (==8.5.1)", "pyobjc-framework-UserNotifications (==8.5.1)", "pyobjc-framework-UserNotificationsUI (==8.5.1)", "pyobjc-framework-VideoSubscriberAccount (==8.5.1)", "pyobjc-framework-VideoToolbox (==8.5.1)", "pyobjc-framework-Virtualization (==8.5.1)", "pyobjc-framework-Vision (==8.5.1)", "pyobjc-framework-iTunesLibrary (==8.5.1)"]
+
+[[package]]
+name = "pyobjc-core"
+version = "8.5.1"
+description = "Python<->ObjC Interoperability Module"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "pyobjc-framework-accessibility"
+version = "8.5.1"
+description = "Wrappers for the framework Accessibility on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-accounts"
+version = "8.5.1"
+description = "Wrappers for the framework Accounts on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-addressbook"
+version = "8.5.1"
+description = "Wrappers for the framework AddressBook on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-adservices"
+version = "8.5.1"
+description = "Wrappers for the framework AdServices on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-adsupport"
+version = "8.5.1"
+description = "Wrappers for the framework AdSupport on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-applescriptkit"
+version = "8.5.1"
+description = "Wrappers for the framework AppleScriptKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-applescriptobjc"
+version = "8.5.1"
+description = "Wrappers for the framework AppleScriptObjC on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-applicationservices"
+version = "8.5.1"
+description = "Wrappers for the framework ApplicationServices on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-apptrackingtransparency"
+version = "8.5.1"
+description = "Wrappers for the framework AppTrackingTransparency on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-audiovideobridging"
+version = "8.5.1"
+description = "Wrappers for the framework AudioVideoBridging on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-authenticationservices"
+version = "8.5.1"
+description = "Wrappers for the framework AuthenticationServices on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-automaticassessmentconfiguration"
+version = "8.5.1"
+description = "Wrappers for the framework AutomaticAssessmentConfiguration on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-automator"
+version = "8.5.1"
+description = "Wrappers for the framework Automator on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-avfoundation"
+version = "8.5.1"
+description = "Wrappers for the framework AVFoundation on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-CoreAudio = ">=8.5.1"
+pyobjc-framework-CoreMedia = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-avkit"
+version = "8.5.1"
+description = "Wrappers for the framework AVKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-businesschat"
+version = "8.5.1"
+description = "Wrappers for the framework BusinessChat on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-calendarstore"
+version = "8.5.1"
+description = "Wrappers for the framework CalendarStore on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-callkit"
+version = "8.5.1"
+description = "Wrappers for the framework CallKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-cfnetwork"
+version = "8.5.1"
+description = "Wrappers for the framework CFNetwork on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-classkit"
+version = "8.5.1"
+description = "Wrappers for the framework ClassKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-cloudkit"
+version = "8.5.1"
+description = "Wrappers for the framework CloudKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Accounts = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-CoreData = ">=8.5.1"
+pyobjc-framework-CoreLocation = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-cocoa"
+version = "8.5.1"
+description = "Wrappers for the Cocoa frameworks on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-collaboration"
+version = "8.5.1"
+description = "Wrappers for the framework Collaboration on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-colorsync"
+version = "8.5.1"
+description = "Wrappers for the framework ColorSync on Mac OS X"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-contacts"
+version = "8.5.1"
+description = "Wrappers for the framework Contacts on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-contactsui"
+version = "8.5.1"
+description = "Wrappers for the framework ContactsUI on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Contacts = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-coreaudio"
+version = "8.5.1"
+description = "Wrappers for the framework CoreAudio on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-coreaudiokit"
+version = "8.5.1"
+description = "Wrappers for the framework CoreAudioKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-CoreAudio = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-corebluetooth"
+version = "8.5.1"
+description = "Wrappers for the framework CoreBluetooth on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-coredata"
+version = "8.5.1"
+description = "Wrappers for the framework CoreData on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-corehaptics"
+version = "8.5.1"
+description = "Wrappers for the framework CoreHaptics on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-corelocation"
+version = "8.5.1"
+description = "Wrappers for the framework CoreLocation on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-coremedia"
+version = "8.5.1"
+description = "Wrappers for the framework CoreMedia on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-coremediaio"
+version = "8.5.1"
+description = "Wrappers for the framework CoreMediaIO on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-coremidi"
+version = "8.5.1"
+description = "Wrappers for the framework CoreMIDI on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-coreml"
+version = "8.5.1"
+description = "Wrappers for the framework CoreML on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-coremotion"
+version = "8.5.1"
+description = "Wrappers for the framework CoreMotion on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-coreservices"
+version = "8.5.1"
+description = "Wrappers for the framework CoreServices on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-FSEvents = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-corespotlight"
+version = "8.5.1"
+description = "Wrappers for the framework CoreSpotlight on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-coretext"
+version = "8.5.1"
+description = "Wrappers for the framework CoreText on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-corewlan"
+version = "8.5.1"
+description = "Wrappers for the framework CoreWLAN on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-cryptotokenkit"
+version = "8.5.1"
+description = "Wrappers for the framework CryptoTokenKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-datadetection"
+version = "8.5.1"
+description = "Wrappers for the framework DataDetection on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-devicecheck"
+version = "8.5.1"
+description = "Wrappers for the framework DeviceCheck on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-dictionaryservices"
+version = "8.5.1"
+description = "Wrappers for the framework DictionaryServices on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-CoreServices = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-discrecording"
+version = "8.5.1"
+description = "Wrappers for the framework DiscRecording on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-discrecordingui"
+version = "8.5.1"
+description = "Wrappers for the framework DiscRecordingUI on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-DiscRecording = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-diskarbitration"
+version = "8.5.1"
+description = "Wrappers for the framework DiskArbitration on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-dvdplayback"
+version = "8.5.1"
+description = "Wrappers for the framework DVDPlayback on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-eventkit"
+version = "8.5.1"
+description = "Wrappers for the framework Accounts on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-exceptionhandling"
+version = "8.5.1"
+description = "Wrappers for the framework ExceptionHandling on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-executionpolicy"
+version = "8.5.1"
+description = "Wrappers for the framework ExecutionPolicy on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-externalaccessory"
+version = "8.5.1"
+description = "Wrappers for the framework ExternalAccessory on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-fileprovider"
+version = "8.5.1"
+description = "Wrappers for the framework FileProvider on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-fileproviderui"
+version = "8.5.1"
+description = "Wrappers for the framework FileProviderUI on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-FileProvider = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-findersync"
+version = "8.5.1"
+description = "Wrappers for the framework FinderSync on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-fsevents"
+version = "8.5.1"
+description = "Wrappers for the framework FSEvents on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-gamecenter"
+version = "8.5.1"
+description = "Wrappers for the framework GameCenter on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-gamecontroller"
+version = "8.5.1"
+description = "Wrappers for the framework GameController on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-gamekit"
+version = "8.5.1"
+description = "Wrappers for the framework GameKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-gameplaykit"
+version = "8.5.1"
+description = "Wrappers for the framework GameplayKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-SpriteKit = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-imagecapturecore"
+version = "8.5.1"
+description = "Wrappers for the framework ImageCaptureCore on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-imserviceplugin"
+version = "8.5.1"
+description = "Wrappers for the framework IMServicePlugIn on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-inputmethodkit"
+version = "8.5.1"
+description = "Wrappers for the framework InputMethodKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-installerplugins"
+version = "8.5.1"
+description = "Wrappers for the framework InstallerPlugins on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-instantmessage"
+version = "8.5.1"
+description = "Wrappers for the framework InstantMessage on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-intents"
+version = "8.5.1"
+description = "Wrappers for the framework Intents on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-intentsui"
+version = "8.5.1"
+description = "Wrappers for the framework Intents on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Intents = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-iosurface"
+version = "8.5.1"
+description = "Wrappers for the framework IOSurface on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-ituneslibrary"
+version = "8.5.1"
+description = "Wrappers for the framework iTunesLibrary on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-kernelmanagement"
+version = "8.5.1"
+description = "Wrappers for the framework KernelManagement on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-latentsemanticmapping"
+version = "8.5.1"
+description = "Wrappers for the framework LatentSemanticMapping on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-launchservices"
+version = "8.5.1"
+description = "Wrappers for the framework LaunchServices on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-CoreServices = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-libdispatch"
+version = "8.5.1"
+description = "Wrappers for libdispatch on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-linkpresentation"
+version = "8.5.1"
+description = "Wrappers for the framework LinkPresentation on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-localauthentication"
+version = "8.5.1"
+description = "Wrappers for the framework LocalAuthentication on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Security = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-localauthenticationembeddedui"
+version = "8.5.1"
+description = "Wrappers for the framework LocalAuthenticationEmbeddedUI on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-LocalAuthentication = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-mailkit"
+version = "8.5.1"
+description = "Wrappers for the framework MailKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-mapkit"
+version = "8.5.1"
+description = "Wrappers for the framework MapKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-CoreLocation = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-mediaaccessibility"
+version = "8.5.1"
+description = "Wrappers for the framework MediaAccessibility on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-medialibrary"
+version = "8.5.1"
+description = "Wrappers for the framework MediaLibrary on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-mediaplayer"
+version = "8.5.1"
+description = "Wrappers for the framework MediaPlayer on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-AVFoundation = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-mediatoolbox"
+version = "8.5.1"
+description = "Wrappers for the framework MediaToolbox on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-message"
+version = "8.5.1"
+description = "Wrappers for the framework Message on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-metal"
+version = "8.5.1"
+description = "Wrappers for the framework Metal on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-metalkit"
+version = "8.5.1"
+description = "Wrappers for the framework MetalKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Metal = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-metalperformanceshaders"
+version = "8.5.1"
+description = "Wrappers for the framework MetalPerformanceShaders on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Metal = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-metalperformanceshadersgraph"
+version = "8.5.1"
+description = "Wrappers for the framework MetalPerformanceShadersGraph on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-MetalPerformanceShaders = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-metrickit"
+version = "8.5.1"
+description = "Wrappers for the framework MetricKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-mlcompute"
+version = "8.5.1"
+description = "Wrappers for the framework MLCompute on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-modelio"
+version = "8.5.1"
+description = "Wrappers for the framework ModelIO on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-multipeerconnectivity"
+version = "8.5.1"
+description = "Wrappers for the framework MultipeerConnectivity on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-naturallanguage"
+version = "8.5.1"
+description = "Wrappers for the framework NaturalLanguage on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-netfs"
+version = "8.5.1"
+description = "Wrappers for the framework NetFS on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-network"
+version = "8.5.1"
+description = "Wrappers for the framework Network on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-networkextension"
+version = "8.5.1"
+description = "Wrappers for the framework NetworkExtension on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-notificationcenter"
+version = "8.5.1"
+description = "Wrappers for the framework NotificationCenter on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-opendirectory"
+version = "8.5.1"
+description = "Wrappers for the framework OpenDirectory on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-osakit"
+version = "8.5.1"
+description = "Wrappers for the framework OSAKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-oslog"
+version = "8.5.1"
+description = "Wrappers for the framework OSLog on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-CoreMedia = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-passkit"
+version = "8.5.1"
+description = "Wrappers for the framework PassKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-pencilkit"
+version = "8.5.1"
+description = "Wrappers for the framework PencilKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-photos"
+version = "8.5.1"
+description = "Wrappers for the framework Photos on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-photosui"
+version = "8.5.1"
+description = "Wrappers for the framework PhotosUI on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-preferencepanes"
+version = "8.5.1"
+description = "Wrappers for the framework PreferencePanes on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-pubsub"
+version = "8.5.1"
+description = "Wrappers for the framework PubSub on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-pushkit"
+version = "8.5.1"
+description = "Wrappers for the framework PushKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-quartz"
+version = "8.5.1"
+description = "Wrappers for the Quartz frameworks on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-quicklookthumbnailing"
+version = "8.5.1"
+description = "Wrappers for the framework QuickLookThumbnailing on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-replaykit"
+version = "8.5.1"
+description = "Wrappers for the framework ReplayKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-safariservices"
+version = "8.5.1"
+description = "Wrappers for the framework SafariServices on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-scenekit"
+version = "8.5.1"
+description = "Wrappers for the framework SceneKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-screencapturekit"
+version = "8.5.1"
+description = "Wrappers for the framework ScreenCaptureKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-CoreMedia = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-screensaver"
+version = "8.5.1"
+description = "Wrappers for the framework ScreenSaver on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-screentime"
+version = "8.5.1"
+description = "Wrappers for the framework ScreenTime on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-scriptingbridge"
+version = "8.5.1"
+description = "Wrappers for the framework ScriptingBridge on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-searchkit"
+version = "8.5.1"
+description = "Wrappers for the framework SearchKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-CoreServices = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-security"
+version = "8.5.1"
+description = "Wrappers for the framework Security on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-securityfoundation"
+version = "8.5.1"
+description = "Wrappers for the framework SecurityFoundation on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Security = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-securityinterface"
+version = "8.5.1"
+description = "Wrappers for the framework SecurityInterface on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Security = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-servernotification"
+version = "8.5.1"
+description = "Wrappers for the framework ServerNotification on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-servicemanagement"
+version = "8.5.1"
+description = "Wrappers for the framework ServiceManagement on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-shazamkit"
+version = "8.5.1"
+description = "Wrappers for the framework ShazamKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-social"
+version = "8.5.1"
+description = "Wrappers for the framework Social on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-soundanalysis"
+version = "8.5.1"
+description = "Wrappers for the framework SoundAnalysis on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-speech"
+version = "8.5.1"
+description = "Wrappers for the framework Speech on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-spritekit"
+version = "8.5.1"
+description = "Wrappers for the framework SpriteKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-storekit"
+version = "8.5.1"
+description = "Wrappers for the framework StoreKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-syncservices"
+version = "8.5.1"
+description = "Wrappers for the framework SyncServices on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-CoreData = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-systemconfiguration"
+version = "8.5.1"
+description = "Wrappers for the framework SystemConfiguration on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-systemextensions"
+version = "8.5.1"
+description = "Wrappers for the framework SystemExtensions on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-uniformtypeidentifiers"
+version = "8.5.1"
+description = "Wrappers for the framework UniformTypeIdentifiers on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-usernotifications"
+version = "8.5.1"
+description = "Wrappers for the framework UserNotifications on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-usernotificationsui"
+version = "8.5.1"
+description = "Wrappers for the framework UserNotificationsUI on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-UserNotifications = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-videosubscriberaccount"
+version = "8.5.1"
+description = "Wrappers for the framework VideoSubscriberAccount on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-videotoolbox"
+version = "8.5.1"
+description = "Wrappers for the framework VideoToolbox on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-CoreMedia = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-virtualization"
+version = "8.5.1"
+description = "Wrappers for the framework Virtualization on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-vision"
+version = "8.5.1"
+description = "Wrappers for the framework Vision on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+pyobjc-framework-CoreML = ">=8.5.1"
+pyobjc-framework-Quartz = ">=8.5.1"
+
+[[package]]
+name = "pyobjc-framework-webkit"
+version = "8.5.1"
+description = "Wrappers for the framework WebKit on macOS"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyobjc-core = ">=8.5.1"
+pyobjc-framework-Cocoa = ">=8.5.1"
+
+[[package]]
+name = "pyparsing"
+version = "3.0.9"
+description = "pyparsing module - Classes and methods to define and execute parsing grammars"
+category = "main"
+optional = false
+python-versions = ">=3.6.8"
+
+[package.extras]
+diagrams = ["railroad-diagrams", "jinja2"]
+
+[[package]]
+name = "pytest"
+version = "7.1.3"
+description = "pytest: simple powerful testing with Python"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+attrs = ">=19.2.0"
+colorama = {version = "*", markers = "sys_platform == \"win32\""}
+importlib-metadata = {version = ">=0.12", markers = "python_version < \"3.8\""}
+iniconfig = "*"
+packaging = "*"
+pluggy = ">=0.12,<2.0"
+py = ">=1.8.2"
+tomli = ">=1.0.0"
+
+[package.extras]
+testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
+
+[[package]]
+name = "pytz"
+version = "2022.5"
+description = "World timezone definitions, modern and historical"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "pyupgrade"
+version = "3.1.0"
+description = "A tool to automatically upgrade syntax for newer versions."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+tokenize-rt = ">=3.2.0"
+
+[[package]]
+name = "pyyaml"
+version = "6.0"
+description = "YAML parser and emitter for Python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "requests"
+version = "2.28.1"
+description = "Python HTTP for Humans."
+category = "main"
+optional = false
+python-versions = ">=3.7, <4"
+
+[package.dependencies]
+certifi = ">=2017.4.17"
+charset-normalizer = ">=2,<3"
+idna = ">=2.5,<4"
+urllib3 = ">=1.21.1,<1.27"
+
+[package.extras]
+socks = ["PySocks (>=1.5.6,!=1.5.7)"]
+use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
+
+[[package]]
+name = "requests-oauthlib"
+version = "1.3.1"
+description = "OAuthlib authentication support for Requests."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[package.dependencies]
+oauthlib = ">=3.0.0"
+requests = ">=2.0.0"
+
+[package.extras]
+rsa = ["oauthlib[signedtoken] (>=3.0.0)"]
+
+[[package]]
+name = "restructuredtext-lint"
+version = "1.4.0"
+description = "reStructuredText linter"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+docutils = ">=0.11,<1.0"
+
+[[package]]
+name = "rsa"
+version = "4.9"
+description = "Pure-Python RSA implementation"
+category = "main"
+optional = false
+python-versions = ">=3.6,<4"
+
+[package.dependencies]
+pyasn1 = ">=0.1.3"
+
+[[package]]
+name = "ruamel.yaml"
+version = "0.17.21"
+description = "ruamel.yaml is a YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order"
+category = "dev"
+optional = false
+python-versions = ">=3"
+
+[package.dependencies]
+"ruamel.yaml.clib" = {version = ">=0.2.6", markers = "platform_python_implementation == \"CPython\" and python_version < \"3.11\""}
+
+[package.extras]
+docs = ["ryd"]
+jinja2 = ["ruamel.yaml.jinja2 (>=0.2)"]
+
+[[package]]
+name = "ruamel.yaml.clib"
+version = "0.2.7"
+description = "C version of reader, parser and emitter for ruamel.yaml derived from libyaml"
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
+name = "safety"
+version = "2.3.1"
+description = "Checks installed dependencies for known vulnerabilities and licenses."
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Click = ">=8.0.2"
+dparse = ">=0.6.2"
+packaging = ">=21.0"
+requests = "*"
+"ruamel.yaml" = ">=0.17.21"
+
+[package.extras]
+github = ["pygithub (>=1.43.3)", "jinja2 (>=3.1.0)"]
+gitlab = ["python-gitlab (>=1.3.0)"]
+
+[[package]]
+name = "six"
+version = "1.16.0"
+description = "Python 2 and 3 compatibility utilities"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+
+[[package]]
+name = "smmap"
+version = "5.0.0"
+description = "A pure Python implementation of a sliding window memory map manager"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "snowballstemmer"
+version = "2.2.0"
+description = "This package provides 29 stemmers for 28 languages generated from Snowball algorithms."
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "soupsieve"
+version = "2.3.2.post1"
+description = "A modern CSS selector implementation for Beautiful Soup."
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "sphinx"
+version = "4.3.2"
+description = "Python documentation generator"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+alabaster = ">=0.7,<0.8"
+babel = ">=1.3"
+colorama = {version = ">=0.3.5", markers = "sys_platform == \"win32\""}
+docutils = ">=0.14,<0.18"
+imagesize = "*"
+Jinja2 = ">=2.3"
+packaging = "*"
+Pygments = ">=2.0"
+requests = ">=2.5.0"
+snowballstemmer = ">=1.1"
+sphinxcontrib-applehelp = "*"
+sphinxcontrib-devhelp = "*"
+sphinxcontrib-htmlhelp = ">=2.0.0"
+sphinxcontrib-jsmath = "*"
+sphinxcontrib-qthelp = "*"
+sphinxcontrib-serializinghtml = ">=1.1.5"
+
+[package.extras]
+docs = ["sphinxcontrib-websupport"]
+lint = ["flake8 (>=3.5.0)", "isort", "mypy (>=0.920)", "docutils-stubs", "types-typed-ast", "types-pkg-resources", "types-requests"]
+test = ["pytest", "pytest-cov", "html5lib", "cython", "typed-ast"]
+
+[[package]]
+name = "sphinx-autobuild"
+version = "2021.3.14"
+description = "Rebuild Sphinx documentation on changes, with live-reload in the browser."
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+colorama = "*"
+livereload = "*"
+sphinx = "*"
+
+[package.extras]
+test = ["pytest", "pytest-cov"]
+
+[[package]]
+name = "sphinx-basic-ng"
+version = "1.0.0b1"
+description = "A modern skeleton for Sphinx themes."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+sphinx = ">=4.0"
+
+[package.extras]
+docs = ["furo", "myst-parser", "sphinx-copybutton", "sphinx-inline-tabs", "ipython"]
+
+[[package]]
+name = "sphinx-click"
+version = "4.3.0"
+description = "Sphinx extension that automatically documents click applications"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+click = ">=7.0"
+docutils = "*"
+sphinx = ">=2.0"
+
+[[package]]
+name = "sphinxcontrib-applehelp"
+version = "1.0.2"
+description = "sphinxcontrib-applehelp is a sphinx extension which outputs Apple help books"
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+test = ["pytest"]
+lint = ["docutils-stubs", "mypy", "flake8"]
+
+[[package]]
+name = "sphinxcontrib-devhelp"
+version = "1.0.2"
+description = "sphinxcontrib-devhelp is a sphinx extension which outputs Devhelp document."
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+test = ["pytest"]
+lint = ["docutils-stubs", "mypy", "flake8"]
+
+[[package]]
+name = "sphinxcontrib-htmlhelp"
+version = "2.0.0"
+description = "sphinxcontrib-htmlhelp is a sphinx extension which renders HTML help files"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+test = ["html5lib", "pytest"]
+lint = ["docutils-stubs", "mypy", "flake8"]
+
+[[package]]
+name = "sphinxcontrib-jsmath"
+version = "1.0.1"
+description = "A sphinx extension which renders display math in HTML via JavaScript"
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+test = ["mypy", "flake8", "pytest"]
+
+[[package]]
+name = "sphinxcontrib-qthelp"
+version = "1.0.3"
+description = "sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp document."
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+test = ["pytest"]
+lint = ["docutils-stubs", "mypy", "flake8"]
+
+[[package]]
+name = "sphinxcontrib-serializinghtml"
+version = "1.1.5"
+description = "sphinxcontrib-serializinghtml is a sphinx extension which outputs \"serialized\" HTML files (json and pickle)."
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+lint = ["flake8", "mypy", "docutils-stubs"]
+test = ["pytest"]
+
+[[package]]
+name = "stevedore"
+version = "3.5.2"
+description = "Manage dynamic plugins for Python applications"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+importlib-metadata = {version = ">=1.7.0", markers = "python_version < \"3.8\""}
+pbr = ">=2.0.0,<2.1.0 || >2.1.0"
+
+[[package]]
+name = "tokenize-rt"
+version = "5.0.0"
+description = "A wrapper around the stdlib `tokenize` which roundtrips."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "toml"
+version = "0.10.2"
+description = "Python Library for Tom's Obvious, Minimal Language"
+category = "dev"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+
+[[package]]
+name = "tomli"
+version = "2.0.1"
+description = "A lil' TOML parser"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "tomlkit"
+version = "0.11.5"
+description = "Style preserving TOML library"
+category = "main"
+optional = false
+python-versions = ">=3.6,<4.0"
+
+[[package]]
+name = "tornado"
+version = "6.2"
+description = "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed."
+category = "dev"
+optional = false
+python-versions = ">= 3.7"
+
+[[package]]
+name = "typed-ast"
+version = "1.5.4"
+description = "a fork of Python 2 and 3 ast modules with type comment support"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "typeguard"
+version = "2.13.3"
+description = "Run-time type checker for Python"
+category = "dev"
+optional = false
+python-versions = ">=3.5.3"
+
+[package.extras]
+doc = ["sphinx-rtd-theme", "sphinx-autodoc-typehints (>=1.2.0)"]
+test = ["pytest", "typing-extensions", "mypy"]
+
+[[package]]
+name = "typing-extensions"
+version = "4.4.0"
+description = "Backported and Experimental Type Hints for Python 3.7+"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "uritemplate"
+version = "4.1.1"
+description = "Implementation of RFC 6570 URI Templates"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "urllib3"
+version = "1.26.12"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, <4"
+
+[package.extras]
+brotli = ["brotlicffi (>=0.8.0)", "brotli (>=1.0.9)", "brotlipy (>=0.6.0)"]
+secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "urllib3-secure-extra", "ipaddress"]
+socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
+
+[[package]]
+name = "virtualenv"
+version = "20.16.2"
+description = "Virtual Python Environment builder"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+distlib = ">=0.3.1,<1"
+filelock = ">=3.2,<4"
+importlib-metadata = {version = ">=0.12", markers = "python_version < \"3.8\""}
+platformdirs = ">=2,<3"
+
+[package.extras]
+docs = ["proselint (>=0.10.2)", "sphinx (>=3)", "sphinx-argparse (>=0.2.5)", "sphinx-rtd-theme (>=0.4.3)", "towncrier (>=21.3)"]
+testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", "packaging (>=20.0)", "pytest (>=4)", "pytest-env (>=0.6.2)", "pytest-freezegun (>=0.4.1)", "pytest-mock (>=2)", "pytest-randomly (>=1)", "pytest-timeout (>=1)"]
+
+[[package]]
+name = "xdoctest"
+version = "1.1.0"
+description = "A rewrite of the builtin doctest module"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+colorama = {version = "*", optional = true, markers = "platform_system == \"Windows\" and extra == \"colors\""}
+Pygments = {version = "*", optional = true, markers = "python_version >= \"3.5.0\" and extra == \"colors\""}
+six = "*"
+
+[package.extras]
+tests = ["pytest-cov", "pytest", "typing", "pytest", "pytest-cov", "pytest", "pytest-cov", "pytest", "pytest", "pytest-cov", "pytest", "scikit-build", "pybind11", "ninja", "codecov", "cmake"]
+tests-strict = ["pytest-cov (==3.0.0)", "pytest (==6.2.5)", "typing (==3.7.4)", "pytest (==4.6.0)", "pytest (==4.6.0)", "pytest-cov (==2.9.0)", "pytest (==4.6.0)", "pytest-cov (==2.8.1)", "pytest (==4.6.0)", "pytest (==4.6.0)", "pytest-cov (==2.8.1)", "scikit-build (==0.11.1)", "pybind11 (==2.7.1)", "ninja (==1.10.2)", "codecov (==2.0.15)", "cmake (==3.21.2)"]
+runtime-strict = ["six (==1.11.0)"]
+optional = ["ipykernel", "ipython", "jupyter-client", "nbconvert", "jinja2", "jupyter-core", "jedi", "attrs", "pygments", "ipython-genutils", "debugpy", "debugpy", "debugpy", "ipykernel", "debugpy", "ipython", "jupyter-client", "pygments", "tomli", "debugpy", "colorama", "pyflakes"]
+optional-strict = ["ipykernel (==6.0.0)", "IPython (==7.23.1)", "jupyter-client (==7.0.0)", "nbconvert (==6.0.0)", "jinja2 (==3.0.0)", "jupyter-core (==4.7.0)", "jedi (==0.16)", "attrs (==19.2.0)", "Pygments (==2.4.1)", "ipython-genutils (==0.2.0)", "debugpy (==1.6.0)", "debugpy (==1.0.0)", "debugpy (==1.0.0)", "ipykernel (==5.2.0)", "debugpy (==1.0.0)", "IPython (==7.10.0)", "jupyter-client (==6.1.5)", "Pygments (==2.0.0)", "tomli (==0.2.0)", "debugpy (==1.3.0)", "colorama (==0.4.1)", "pyflakes (==2.2.0)"]
+jupyter = ["ipykernel", "ipython", "jupyter-client", "nbconvert", "jinja2", "jupyter-core", "jedi", "attrs", "ipython-genutils", "debugpy", "debugpy", "debugpy", "ipykernel", "debugpy", "ipython", "jupyter-client", "debugpy"]
+colors = ["pygments", "pygments", "colorama"]
+all = ["ipykernel", "ipython", "jupyter-client", "nbconvert", "pytest-cov", "jinja2", "jupyter-core", "jedi", "attrs", "pygments", "pytest", "ipython-genutils", "debugpy", "typing", "debugpy", "debugpy", "pytest", "ipykernel", "debugpy", "ipython", "jupyter-client", "pytest-cov", "pytest", "pytest-cov", "pytest", "pygments", "pytest", "debugpy", "pytest-cov", "pytest", "colorama", "six", "scikit-build", "pybind11", "ninja", "codecov", "cmake"]
+all-strict = ["ipykernel (==6.0.0)", "IPython (==7.23.1)", "jupyter-client (==7.0.0)", "nbconvert (==6.0.0)", "pytest-cov (==3.0.0)", "jinja2 (==3.0.0)", "jupyter-core (==4.7.0)", "jedi (==0.16)", "attrs (==19.2.0)", "Pygments (==2.4.1)", "pytest (==6.2.5)", "ipython-genutils (==0.2.0)", "debugpy (==1.6.0)", "typing (==3.7.4)", "debugpy (==1.0.0)", "debugpy (==1.0.0)", "pytest (==4.6.0)", "ipykernel (==5.2.0)", "debugpy (==1.0.0)", "IPython (==7.10.0)", "jupyter-client (==6.1.5)", "pytest (==4.6.0)", "pytest-cov (==2.9.0)", "pytest (==4.6.0)", "pytest-cov (==2.8.1)", "Pygments (==2.0.0)", "pytest (==4.6.0)", "debugpy (==1.3.0)", "pytest (==4.6.0)", "pytest-cov (==2.8.1)", "colorama (==0.4.1)", "six (==1.11.0)", "scikit-build (==0.11.1)", "pybind11 (==2.7.1)", "ninja (==1.10.2)", "codecov (==2.0.15)", "cmake (==3.21.2)"]
+
+[[package]]
+name = "zipp"
+version = "3.9.0"
+description = "Backport of pathlib-compatible object wrapper for zip files"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+docs = ["sphinx (>=3.5)", "jaraco.packaging (>=9)", "rst.linker (>=1.9)", "furo", "jaraco.tidelift (>=1.4)"]
+testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 (<5)", "pytest-cov", "pytest-enabler (>=1.3)", "jaraco.itertools", "func-timeout", "jaraco.functools", "more-itertools", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)"]
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.7"
+content-hash = "6542afaf7d689449ae36435d1606f4ebe698646c04d510a9bdb6558620d382ce"
+
+[metadata.files]
+alabaster = []
+argcomplete = []
+attrs = []
+babel = []
+bandit = []
+beautifulsoup4 = []
+black = []
+cachetools = []
+certifi = []
+cfgv = []
+charset-normalizer = []
+click = []
+colorama = []
+colorlog = []
+coverage = []
+darglint = []
+distlib = []
+docutils = []
+dparse = []
+filelock = []
+flake8 = []
+flake8-bandit = []
+flake8-bugbear = []
+flake8-docstrings = []
+flake8-rst-docstrings = []
+furo = []
+gitdb = []
+gitpython = []
+google-api-core = []
+google-api-python-client = []
+google-auth = []
+google-auth-httplib2 = []
+google-auth-oauthlib = []
+googleapis-common-protos = []
+httplib2 = []
+identify = []
+idna = []
+imagesize = []
+importlib-metadata = []
+iniconfig = []
+isort = []
+jinja2 = []
+keyboard = []
+livereload = []
+markdown-it-py = []
+markupsafe = []
+mccabe = []
+mdit-py-plugins = []
+mdurl = []
+mido = []
+mypy = []
+mypy-extensions = []
+myst-parser = []
+nodeenv = []
+nox = []
+nox-poetry = []
+oauthlib = []
+packaging = []
+pathspec = []
+pbr = []
+pep8-naming = []
+platformdirs = []
+pluggy = []
+pre-commit = []
+pre-commit-hooks = []
+protobuf = []
+py = []
+pyasn1 = []
+pyasn1-modules = []
+pycodestyle = []
+pydocstyle = []
+pyflakes = []
+pygments = []
+pyobjc = []
+pyobjc-core = []
+pyobjc-framework-accessibility = []
+pyobjc-framework-accounts = []
+pyobjc-framework-addressbook = []
+pyobjc-framework-adservices = []
+pyobjc-framework-adsupport = []
+pyobjc-framework-applescriptkit = []
+pyobjc-framework-applescriptobjc = []
+pyobjc-framework-applicationservices = []
+pyobjc-framework-apptrackingtransparency = []
+pyobjc-framework-audiovideobridging = []
+pyobjc-framework-authenticationservices = []
+pyobjc-framework-automaticassessmentconfiguration = []
+pyobjc-framework-automator = []
+pyobjc-framework-avfoundation = []
+pyobjc-framework-avkit = []
+pyobjc-framework-businesschat = []
+pyobjc-framework-calendarstore = []
+pyobjc-framework-callkit = []
+pyobjc-framework-cfnetwork = []
+pyobjc-framework-classkit = []
+pyobjc-framework-cloudkit = []
+pyobjc-framework-cocoa = []
+pyobjc-framework-collaboration = []
+pyobjc-framework-colorsync = []
+pyobjc-framework-contacts = []
+pyobjc-framework-contactsui = []
+pyobjc-framework-coreaudio = []
+pyobjc-framework-coreaudiokit = []
+pyobjc-framework-corebluetooth = []
+pyobjc-framework-coredata = []
+pyobjc-framework-corehaptics = []
+pyobjc-framework-corelocation = []
+pyobjc-framework-coremedia = []
+pyobjc-framework-coremediaio = []
+pyobjc-framework-coremidi = []
+pyobjc-framework-coreml = []
+pyobjc-framework-coremotion = []
+pyobjc-framework-coreservices = []
+pyobjc-framework-corespotlight = []
+pyobjc-framework-coretext = []
+pyobjc-framework-corewlan = []
+pyobjc-framework-cryptotokenkit = []
+pyobjc-framework-datadetection = []
+pyobjc-framework-devicecheck = []
+pyobjc-framework-dictionaryservices = []
+pyobjc-framework-discrecording = []
+pyobjc-framework-discrecordingui = []
+pyobjc-framework-diskarbitration = []
+pyobjc-framework-dvdplayback = []
+pyobjc-framework-eventkit = []
+pyobjc-framework-exceptionhandling = []
+pyobjc-framework-executionpolicy = []
+pyobjc-framework-externalaccessory = []
+pyobjc-framework-fileprovider = []
+pyobjc-framework-fileproviderui = []
+pyobjc-framework-findersync = []
+pyobjc-framework-fsevents = []
+pyobjc-framework-gamecenter = []
+pyobjc-framework-gamecontroller = []
+pyobjc-framework-gamekit = []
+pyobjc-framework-gameplaykit = []
+pyobjc-framework-imagecapturecore = []
+pyobjc-framework-imserviceplugin = []
+pyobjc-framework-inputmethodkit = []
+pyobjc-framework-installerplugins = []
+pyobjc-framework-instantmessage = []
+pyobjc-framework-intents = []
+pyobjc-framework-intentsui = []
+pyobjc-framework-iosurface = []
+pyobjc-framework-ituneslibrary = []
+pyobjc-framework-kernelmanagement = []
+pyobjc-framework-latentsemanticmapping = []
+pyobjc-framework-launchservices = []
+pyobjc-framework-libdispatch = []
+pyobjc-framework-linkpresentation = []
+pyobjc-framework-localauthentication = []
+pyobjc-framework-localauthenticationembeddedui = []
+pyobjc-framework-mailkit = []
+pyobjc-framework-mapkit = []
+pyobjc-framework-mediaaccessibility = []
+pyobjc-framework-medialibrary = []
+pyobjc-framework-mediaplayer = []
+pyobjc-framework-mediatoolbox = []
+pyobjc-framework-message = []
+pyobjc-framework-metal = []
+pyobjc-framework-metalkit = []
+pyobjc-framework-metalperformanceshaders = []
+pyobjc-framework-metalperformanceshadersgraph = []
+pyobjc-framework-metrickit = []
+pyobjc-framework-mlcompute = []
+pyobjc-framework-modelio = []
+pyobjc-framework-multipeerconnectivity = []
+pyobjc-framework-naturallanguage = []
+pyobjc-framework-netfs = []
+pyobjc-framework-network = []
+pyobjc-framework-networkextension = []
+pyobjc-framework-notificationcenter = []
+pyobjc-framework-opendirectory = []
+pyobjc-framework-osakit = []
+pyobjc-framework-oslog = []
+pyobjc-framework-passkit = []
+pyobjc-framework-pencilkit = []
+pyobjc-framework-photos = []
+pyobjc-framework-photosui = []
+pyobjc-framework-preferencepanes = []
+pyobjc-framework-pubsub = []
+pyobjc-framework-pushkit = []
+pyobjc-framework-quartz = []
+pyobjc-framework-quicklookthumbnailing = []
+pyobjc-framework-replaykit = []
+pyobjc-framework-safariservices = []
+pyobjc-framework-scenekit = []
+pyobjc-framework-screencapturekit = []
+pyobjc-framework-screensaver = []
+pyobjc-framework-screentime = []
+pyobjc-framework-scriptingbridge = []
+pyobjc-framework-searchkit = []
+pyobjc-framework-security = []
+pyobjc-framework-securityfoundation = []
+pyobjc-framework-securityinterface = []
+pyobjc-framework-servernotification = []
+pyobjc-framework-servicemanagement = []
+pyobjc-framework-shazamkit = []
+pyobjc-framework-social = []
+pyobjc-framework-soundanalysis = []
+pyobjc-framework-speech = []
+pyobjc-framework-spritekit = []
+pyobjc-framework-storekit = []
+pyobjc-framework-syncservices = []
+pyobjc-framework-systemconfiguration = []
+pyobjc-framework-systemextensions = []
+pyobjc-framework-uniformtypeidentifiers = []
+pyobjc-framework-usernotifications = []
+pyobjc-framework-usernotificationsui = []
+pyobjc-framework-videosubscriberaccount = []
+pyobjc-framework-videotoolbox = []
+pyobjc-framework-virtualization = []
+pyobjc-framework-vision = []
+pyobjc-framework-webkit = []
+pyparsing = []
+pytest = []
+pytz = []
+pyupgrade = []
+pyyaml = []
+requests = []
+requests-oauthlib = []
+restructuredtext-lint = []
+rsa = []
+"ruamel.yaml" = []
+"ruamel.yaml.clib" = []
+safety = []
+six = []
+smmap = []
+snowballstemmer = []
+soupsieve = []
+sphinx = []
+sphinx-autobuild = []
+sphinx-basic-ng = []
+sphinx-click = []
+sphinxcontrib-applehelp = []
+sphinxcontrib-devhelp = []
+sphinxcontrib-htmlhelp = []
+sphinxcontrib-jsmath = []
+sphinxcontrib-qthelp = []
+sphinxcontrib-serializinghtml = []
+stevedore = []
+tokenize-rt = []
+toml = []
+tomli = []
+tomlkit = []
+tornado = []
+typed-ast = []
+typeguard = []
+typing-extensions = []
+uritemplate = []
+urllib3 = []
+virtualenv = []
+xdoctest = []
+zipp = []
