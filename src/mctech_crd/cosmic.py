@@ -13,17 +13,17 @@ from urllib.request import urlopen
 # from sixfab_sensors import SixFabSensors
 
 # Our modules
-from config_reader import ConfigReader
-from gm_sensor import GMSensor
-from google_sheets import GoogleSheets
-import logging_config
-from media_player import MediaPlayer
-from midi_input import MidiInput
-from relay_output import RelayOutput
-from serial_number import get_serial_number
-from servo_output import ServoOutput
-from switch_input import SwitchInput
-from text_event_writer import TextEventWriter
+from .config_reader import ConfigReader
+from .gm_sensor import GMSensor
+from .google_sheets import GoogleSheets
+# import logging_config
+from .media_player import MediaPlayer
+from .midi_input import MidiInput
+from .relay_output import RelayOutput
+from .serial_number import get_serial_number
+from .servo_output import ServoOutput
+from .switch_input import SwitchInput
+from .text_event_writer import TextEventWriter
 
 logger = logging.getLogger()
 
