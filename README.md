@@ -1,8 +1,8 @@
 # Cosmic Pi
 
-Raspberry Pi + Cosmic Ray detector
+Python package Raspberry Pi + Cosmic Ray detector.
 
-This project contains Python code that will work with the Mayes Creative Cosmic Pi 'hardware'.
+Designed to work with the Mayes Creative Tech Cosmic Pi 'hardware'.
 
 The code will handle input from the hardware sensor that records a 'hit' from a cosmic ray.
 
