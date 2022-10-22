@@ -3,8 +3,10 @@ import uuid
 
 
 def get_file_path():
-    script_dir = os.path.dirname(__file__)
-    rel_path = "../data/serial_number.txt"
+    script_dir = os.path.expanduser('~/.cosmic')
+    if not os.path.exists(script_dir):
+        os.makedirs(script_dir)
+    rel_path = "serial_number.txt"
     return os.path.normpath(os.path.join(script_dir, rel_path))
 
 

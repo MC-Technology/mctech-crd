@@ -43,7 +43,7 @@ class GMSensor:
             if self.input_handler:
                 self.input_handler(channel)
 
-        GPIO.add_event_detect(GM_INPUT_PIN, GPIO.RISING, callback=callback)
+        GPIO.add_event_detect(GM_INPUT_PIN, GPIO.RISING, callback=callback, bouncetime=1)
 
     def flash_led(self):
         GPIO.output(LED_OUTPUT_PIN, GPIO.HIGH)
