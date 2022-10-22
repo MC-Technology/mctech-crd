@@ -1,4 +1,4 @@
-location: TR11 3PH
+location: SE10 8XJ
 keyboard_trigger: 1
 media_player: false
 network:
@@ -29,3 +29,6 @@ relay_output:
   on_time: 6
 switch_input:
   gpio_pin: 23
+
+/Users/tom/projects/cosmic/cosmic-pi/mctech-crd/src/mctech_crd/cosmic.py
+/Users/tom/projects/cosmic/cosmic-pi/mctech-crd/config/dev.yaml

@@ -58,6 +58,10 @@ myst-parser = {version = ">=0.16.1"}
 [tool.poetry.scripts]
 cosmic = "mctech_crd.cli.__main__:cli"
 
+[tool.poetry.group.dev-dependencies.dependencies]
+mock-gpio = "^0.1.8"
+pudb = "^2022.1.2"
+
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
 tests = ["tests", "*/tests"]

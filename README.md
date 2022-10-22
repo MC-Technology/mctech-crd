@@ -77,7 +77,7 @@ If you run this script at startup, there is possibly an issue where the GPS sens
 The software will default to using the [config/dev.yaml](config/dev.yaml) file to configure itself. This allows various modules to be switched on and configured, e.g.
 
 ```yaml
-location: TR11 3PH
+location: SE10 8XJ
 media_player: true
 google_logging:
   sheet_id: 1234abcde
@@ -137,7 +137,7 @@ See [src/text_event_writer.py](src/text_event_writer.py)
 ## Location
 
 Use the postcode where the device will be for setting the location that is logged using either of the systems above, e.g.
-`location: TR11 3PH`
+`location: SE10 8XJ`
 
 ## GPS Sensor
 

@@ -15,6 +15,7 @@ import logging
 import logging.config
 import sys
 
+
 class _ExcludeErrorsFilter(logging.Filter):
     def filter(self, record):
         """Filters out log messages with log level ERROR (numeric value: 40) or higher."""
@@ -22,51 +23,47 @@ class _ExcludeErrorsFilter(logging.Filter):
 
 
 config = {
-    'version': 1,
-    'filters': {
-        'exclude_errors': {
-            '()': _ExcludeErrorsFilter
-        }
-    },
-    'formatters': {
+    "version": 1,
+    "filters": {"exclude_errors": {"()": _ExcludeErrorsFilter}},
+    "formatters": {
         # Modify log message format here or replace with your custom formatter class
-        'my_formatter': {
-            'format': '(%(process)d) %(asctime)s %(name)s (line %(lineno)s) | %(levelname)s %(message)s'
+        "my_formatter": {
+            "format": "(%(process)d) %(asctime)s %(name)s (line %(lineno)s) | %(levelname)s %(message)s"
         }
     },
-    'handlers': {
-        'console_stderr': {
+    "handlers": {
+        "console_stderr": {
             # Sends log messages with log level ERROR or higher to stderr
-            'class': 'logging.StreamHandler',
-            'level': 'ERROR',
-            'formatter': 'my_formatter',
-            'stream': sys.stderr
+            "class": "logging.StreamHandler",
+            "level": "ERROR",
+            "formatter": "my_formatter",
+            "stream": sys.stderr,
         },
-        'console_stdout': {
+        "console_stdout": {
             # Sends log messages with log level lower than ERROR to stdout
-            'class': 'logging.StreamHandler',
-            'level': 'INFO',
-            'formatter': 'my_formatter',
-            'filters': ['exclude_errors'],
-            'stream': sys.stdout
+            "class": "logging.StreamHandler",
+            "level": "INFO",
+            "formatter": "my_formatter",
+            "filters": ["exclude_errors"],
+            "stream": sys.stdout,
         },
-        'file': {
+        "file": {
             # Sends all log messages to a file
-            'class': 'logging.FileHandler',
-            'level': 'INFO',
-            'formatter': 'my_formatter',
-            'filename': 'app.log',
-            'encoding': 'utf8'
-        }
+            "class": "logging.FileHandler",
+            "level": "INFO",
+            "formatter": "my_formatter",
+            "filename": "app.log",
+            "encoding": "utf8",
+        },
     },
-    'root': {
+    "root": {
         # In general, this should be kept at 'NOTSET'.
         # Otherwise it would interfere with the log levels set for each handler.
-        'level': 'NOTSET',
-        'handlers': ['console_stderr', 'console_stdout', 'file']
+        "level": "NOTSET",
+        "handlers": ["console_stderr", "console_stdout", "file"],
     },
 }
 
 logging.config.dictConfig(config)
-logging.getLogger('googleapiclient').setLevel(logging.CRITICAL)
-logging.getLogger('omxplayer').setLevel(logging.CRITICAL)
+logging.getLogger("googleapiclient").setLevel(logging.CRITICAL)
+logging.getLogger("omxplayer").setLevel(logging.CRITICAL)

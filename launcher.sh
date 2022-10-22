@@ -24,5 +24,7 @@ rm -rf $HOME/mctech-crd/*
 mv $NEW_RELEASE/mctech-crd*/* $HOME/mctech-crd && \
 rm $NEW_RELEASE/*.tar.gz
 
-python3 src/cosmic.py
+cosmic listen
+# python3 src/cosmic.py
+
 exit 0

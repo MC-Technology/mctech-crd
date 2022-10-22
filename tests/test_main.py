@@ -1,8 +1,8 @@
 """Test cases for the __main__ module."""
+from mctech_crd import __main__
+
 import pytest
 from click.testing import CliRunner
-
-from mctech_crd import __main__
 
 
 @pytest.fixture
