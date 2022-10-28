@@ -51,13 +51,13 @@ update_crd_python_package() {
 
 download_install_latest_release(){
     # find and download most recent github release/tag
-    if [[ -z COSMIC_DEV_PACKAGE_URL ]]; then
+    if [[ -z $COSMIC_DEV_PACKAGE_URL ]]; then
         rm -rf ~/tmp/cosmic-latest-release/*;
         gh release download -A tar.gz -D ~/tmp/cosmic-latest-release
         tar -xvzf ~/tmp/cosmic-latest-release/mctech-crd*.tar.gz -C ~/tmp/cosmic-latest-release
         # rename for simplicity
         rm ~/tmp/cosmic-latest-release/*.tar.gz
-        mv ~/tmp/cosmic-latest-release/mctech-crd-* ~/tmp/cosmic-latest-release/mctech-crd
+        # mv ~/tmp/cosmic-latest-release/mctech-crd-* ~/tmp/cosmic-latest-release/mctech-crd
         pip install ~/tmp/cosmic-latest-release/mctech-crd*
     else
         echo "Downloading development verion mctech-crd"
