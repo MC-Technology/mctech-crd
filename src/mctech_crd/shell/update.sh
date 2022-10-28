@@ -64,7 +64,7 @@ download_install_latest_release(){
         # mv ~/tmp/cosmic-latest-release/mctech-crd-* ~/tmp/cosmic-latest-release/mctech-crd
         pip install --upgrade ~/tmp/cosmic-latest-release/mctech-crd*
     else
-        echo "Downloading development verion mctech-crd"
+        echo "Downloading development version mctech-crd"
         pip install --force-reinstall $COSMIC_DEV_PACKAGE_URL
     fi
 }
