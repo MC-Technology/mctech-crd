@@ -36,7 +36,6 @@ def listen():
 def update():
     # TODO: This manual checking unnecessary if move to PyPi package
     click.echo("Updating cosmic ray detection client")
-
     if get_latest_release_version() == __version__:
         click.echo("Latest version already installed")
         return
@@ -50,6 +49,15 @@ def update():
 @cli.command(name="version")
 def version():
     click.echo(__version__)
+
+
+@cli.command(name="start")
+@click.pass_context
+def start(ctx):
+    click.echo("Starting cosmic ray detection client")
+    ctx.invoke(update)
+    ctx.invoke(listen)
+
 
 if __name__ == "__main__":
     cli()
