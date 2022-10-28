@@ -7,6 +7,7 @@ export GH_REPO=MC-Technology/mctech-crd
 export CREDENTIALS_DIR=/boot/mct_credentials
 export GH_CREDENTIALS=$CREDENTIALS_DIR/gh_token.sh
 
+# export COSMIC_DEV_PACKAGE_URL=git+https://$GH_TOKEN@github.com/MC-Technology/mctech-crd.git
 
 if [[ $OSTYPE == "darwin"* ]]; then
     # homebrew pyenv versions seem to be behind
@@ -45,7 +46,7 @@ update_crd_python_package() {
     if [[ -z "${GH_TOKEN}" ]]; then
         echo "Could not update cosmic client package (mctech-crd) - GH_TOKEN not available"
     else
-        pip install --upgrade git+https://$GH_TOKEN@github.com/MC-Technology/mctech-crd.git
+        pip install --upgrade $COSMIC_DEV_PACKAGE_URL
     fi
 }
 
@@ -54,25 +55,20 @@ download_install_latest_release(){
     if [[ -z $COSMIC_DEV_PACKAGE_URL ]]; then
         rm -rf ~/tmp/cosmic-latest-release/*;
         gh release download -A tar.gz -D ~/tmp/cosmic-latest-release
-        tar -xvzf ~/tmp/cosmic-latest-release/mctech-crd*.tar.gz -C ~/tmp/cosmic-latest-release
-        # rename for simplicity
+        tar -xzf ~/tmp/cosmic-latest-release/mctech-crd*.tar.gz -C ~/tmp/cosmic-latest-release
         rm ~/tmp/cosmic-latest-release/*.tar.gz
+        # rename for simplicity
         # mv ~/tmp/cosmic-latest-release/mctech-crd-* ~/tmp/cosmic-latest-release/mctech-crd
-        pip install ~/tmp/cosmic-latest-release/mctech-crd*
+        pip install --upgrade ~/tmp/cosmic-latest-release/mctech-crd*
     else
         echo "Downloading development verion mctech-crd"
         pip install --force-reinstall $COSMIC_DEV_PACKAGE_URL
     fi
 }
+get_latest(){
+echo `gh api "/repos/$GH_REPO/releases/latest"`
+}
 
-fi
-
-if [ -f "/boot/DEBUG.txt" ]; then
-    echo "launcher.sh ran" >> $LOG_FILE
-fi
-
-init_python_environment
-init_credentials
-download_install_latest_release
-
-exit 0
+# init_python_environment
+# init_credentials
+# download_install_latest_release
