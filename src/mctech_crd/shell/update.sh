@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 export LOG_FILE=$HOME/mctech-crd.log
 export NEW_RELEASE=/tmp/cosmic-release
