@@ -2,7 +2,14 @@
 from mctech_crd.cosmic import listen as crd_listen
 
 import click
+import subprocess
 
+import os.path
+from pathlib import PurePath
+
+UPDATE_SCRIPT_PATH = PurePath(os.path.dirname(__file__)).parent.joinpath("shell/update.sh")
+
+# os.path.normpath(os.path.join(script_dir, rel_path))
 
 @click.group()
 def cli():
@@ -16,9 +23,12 @@ def listen():
 
 
 @cli.command(name="update")
-def welcome():
+def update():
     click.echo("Updating cosmic ray detection client")
-
+    try:
+        subprocess.run(["bash", "-c", UPDATE_SCRIPT_PATH], check=True)
+    except:
+        import pudb; pu.db
 
 if __name__ == "__main__":
     cli()
