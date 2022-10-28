@@ -1,5 +1,6 @@
 """Command-line interface."""
 from mctech_crd.cosmic import listen as crd_listen
+from mctech_crd import __version__
 
 import click
 import subprocess
@@ -29,6 +30,10 @@ def update():
         subprocess.run(["bash", "-c", UPDATE_SCRIPT_PATH], check=True)
     except:
         import pudb; pu.db
+
+@cli.command(name="version")
+def version():
+    click.echo(__version__)
 
 if __name__ == "__main__":
     cli()
