@@ -49,18 +49,23 @@ update_crd_python_package() {
     fi
 }
 
-# download_release(){
-    ## find and download most recent github release/tag
-    ## TODO: check if already most recent
-    ## TODO: move update process to another script
-    # gh release download -A tar.gz -D $NEW_RELEASE && \
-    # tar -xvzf $NEW_RELEASE/mctech-crd-*.tar.gz -C $NEW_RELEASE && \
-    # rm -rf $HOME/mctech-crd/*
-    # mv $NEW_RELEASE/mctech-crd*/* $HOME/mctech-crd && \
-    # rm $NEW_RELEASE/*.tar.gz
-    ## start listener
-    # python3 src/cosmic.py
-# }
+download_install_latest_release(){
+    # find and download most recent github release/tag
+    if [[ -z COSMIC_DEV_PACKAGE_URL ]]; then
+        rm -rf ~/tmp/cosmic-latest-release/*;
+        gh release download -A tar.gz -D ~/tmp/cosmic-latest-release
+        tar -xvzf ~/tmp/cosmic-latest-release/mctech-crd*.tar.gz -C ~/tmp/cosmic-latest-release
+        # rename for simplicity
+        rm ~/tmp/cosmic-latest-release/*.tar.gz
+        mv ~/tmp/cosmic-latest-release/mctech-crd-* ~/tmp/cosmic-latest-release/mctech-crd
+        pip install ~/tmp/cosmic-latest-release/mctech-crd*
+    else
+        echo "Downloading development verion mctech-crd"
+        pip install --force-reinstall $COSMIC_DEV_PACKAGE_URL
+    fi
+}
+
+fi
 
 if [ -f "/boot/DEBUG.txt" ]; then
     echo "launcher.sh ran" >> $LOG_FILE
@@ -68,7 +73,6 @@ fi
 
 init_python_environment
 init_credentials
-
-pip install --upgrade mctech-crd
+download_install_latest_release
 
 exit 0
