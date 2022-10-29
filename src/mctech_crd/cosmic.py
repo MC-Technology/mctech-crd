@@ -31,9 +31,6 @@ from mctech_crd.text_event_writer import TextEventWriter
 logger = logging.getLogger()
 
 
-COSMIC_CONFIG_ENV = os.environ.get('COSMIC_CONFIG', None)
-
-
 def await_internet_access(max_retries=20, retry_delay=5):
     internet_accessible = False
     retry = 0
@@ -63,53 +60,13 @@ def get_ip_address():
     return ip_address
 
 
-def help():
-    print("{} --config=<config_file>".format(__file__))
-
-
-def parse_args(argv):
-    parsed_args = {}
-    try:
-        opts, args = getopt.getopt(argv, "h", ["config="])
-    except getopt.GetoptError:
-        help()
-        sys.exit(2)
-    for opt, arg in opts:
-        if opt == "-h":
-            help()
-            sys.exit(0)
-        elif opt in ("--config"):
-            parsed_args["config_file"] = arg
-    return parsed_args
-
-
-def get_config(config_file_arg):
-    if config_file_arg:
-        config_file = config_file_arg
-    elif COSMIC_CONFIG_ENV:
-        config_file = COSMIC_CONFIG_ENV
-    else:
-        config_file = os.path.normpath(
-            os.path.join(os.path.dirname(__file__), "config_default/dev.yaml")
-        )
-
-    # Ensure path is absolute
-    if os.path.isabs(config_file) == False:
-        config_file = os.path.normpath(os.path.join(os.getcwd(), config_file))
-
-    logger.info("Using config file {}".format(config_file))
-    return ConfigReader(config_file)
-
-
-def listen(argv):
+def listen(config):
     global logger
 
     last_time = 0
     servo_output = None
 
-    parsed_args = parse_args(argv)
-
-    config = get_config(parsed_args.get("config_file", None))
+    config = ConfigReader(config)
 
     min_interval = config.get_min_interval()
     servo_angle = 45

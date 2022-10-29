@@ -1,9 +1,52 @@
 import yaml
+import logging
+import os
+
+logger = logging.getLogger()
 
 
 class ConfigReader:
+    """
+    Reads configuration for the CRD listener from a yaml file
+    """
     def __init__(self, config_path):
-        self.config_path = config_path
+        self.cfg = []
+        self.config_path = self.get_config_file_path(config_path)
+        self.read_config()
+
+    @staticmethod
+    def get_config_file_path(config_path):
+        config_file = ""
+        try:
+            if config_path:
+                if ".yaml" in config_path or ".yml" in config_path:
+                    config_file = os.path.normpath(config_path)
+                    # ensure path is absolute
+                    if os.path.isabs(config_file) == False:
+                        config_file = os.path.normpath(os.path.join(os.getcwd(), config_file))
+                    logger.info(f"Using config file {config_file}")
+                else:
+                    # relative path should instead select a default config file, eg 'dev.yaml'
+                    config_file = os.path.join(os.path.dirname(__file__), f"config_default/{config_path}.yaml")
+                    logger.info(f"Using default config {config_path}.yaml")
+        except:
+            pass
+
+        # provide a default
+        if not os.path.exists(config_file):
+            config_file = os.path.join(os.path.dirname(__file__), "config_default/dev.yaml")
+            logger.info("Defaulting to dev config")
+
+        return config_file
+
+    def read_config(self):
+        with open(self.config_path, "r") as ymlfile:
+            self.cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
+
+    def write_config(self):
+        with file(self.config_path, "w") as ymlfile:
+            yaml.dump(self.cfg, ymlfile)
+
         self.read_config()
 
     def keyboard_trigger(self):
@@ -74,13 +117,3 @@ class ConfigReader:
             return self.cfg["switch_input"]
         except:
             return False
-
-    def read_config(self):
-        with open(self.config_path, "r") as ymlfile:
-            self.cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
-
-    def write_config(self):
-        with file(self.config_path, "w") as ymlfile:
-            yaml.dump(self.cfg, ymlfile)
-
-        self.read_config()

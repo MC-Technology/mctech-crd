@@ -4,10 +4,13 @@ from mctech_crd import __version__
 
 import click
 import subprocess
+import logging
 
 import os.path
 import json
 from pathlib import PurePath
+
+logging.basicConfig(level=logging.INFO, format='%(message)s')
 
 UPDATE_SCRIPT_PATH = PurePath(os.path.dirname(__file__)).parent.joinpath("shell/update.sh")
 GET_RELEASE = PurePath(os.path.dirname(__file__)).parent.joinpath("shell/get_latest_release.sh")
@@ -27,9 +30,10 @@ def cli():
 
 
 @cli.command(name="listen")
-def listen():
+@click.option('--config', envvar='COSMIC_CONFIG')
+def listen(config):
     click.echo("Listening for cosmic ray detector events")
-    crd_listen()
+    crd_listen(config)
 
 
 @cli.command(name="update")
