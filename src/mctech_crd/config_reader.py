@@ -80,10 +80,7 @@ class ConfigReader:
             return {}
 
     def google_logging(self):
-        try:
-            return self.cfg["google_logging"]
-        except:
-            return False
+        return self.cfg.get("google_logging", None)
 
     def has_text_logging(self):
         try:

@@ -4,7 +4,7 @@ media_player: false
 network:
   max_retries: 10
 google_logging:
-  credentials_file: development
+  # credentials_file: development
   sheet_id: 10eR2e-A6Gmm-V0kRyeiF26AB9Pry2V3inDA64CelqEs
   debug: 1
 text_logging: true

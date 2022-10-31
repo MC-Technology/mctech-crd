@@ -1,7 +1,7 @@
 from __future__ import print_function
 
 import logging
-import os.path
+import os
 import pickle
 from functools import lru_cache
 
@@ -20,11 +20,12 @@ logger = logging.getLogger()
 # SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 RANGE_NAME = "Sheet1"
-
+CREDENTIALS_FILE = "~/.cosmic/credentials/google_api.json"
 
 class GoogleSheets:
     def __init__(self, config):
-        self.credentials_file = config.get("credentials_file", "development")
+        self.credentials_file = config.get("credentials_file", None)
+
         self.spreadsheet_id = config.get("sheet_id")
         self.debug = config.get("debug", False)
         if self.spreadsheet_id is None:
@@ -39,23 +40,24 @@ class GoogleSheets:
 
     @lru_cache()
     def load_credentials(self):
-        if self.debug:
-            print("Google service account credentials loaded")
-        script_dir = os.path.dirname(__file__)
-        creds_rel_path = "../credentials/{}.json".format(self.credentials_file)
-        creds_abs_path = os.path.normpath(os.path.join(script_dir, creds_rel_path))
-        creds = None
-        # https://cloud.google.com/docs/authentication/production#passing_code
-        return service_account.Credentials.from_service_account_file(
-            creds_abs_path, scopes=SCOPES
-        )
+        # Get google service account from home directory
+        key_file = os.path.normpath(CREDENTIALS_FILE)
+        if os.path.exists(key_file):
+            # https://cloud.google.com/docs/authentication/production#passing_code
+            return service_account.Credentials.from_service_account_file(
+                key_file, scopes=SCOPES
+            )
 
     def get_service(self):
-        creds = self.load_credentials()
-        service = build("sheets", "v4", credentials=creds)
-        return service
+        if creds := self.load_credentials():
+            return build("sheets", "v4", credentials=creds)
+        return None
 
     def write_event(self, iso_time, serial_number, extra_fields):
+        if not self.service:
+            logger.warning("GoogleSheets - no service provided (likely missing credentials)")
+            return
+
         value_input_option = "RAW"
         insert_data_option = "INSERT_ROWS"
 
@@ -65,9 +67,8 @@ class GoogleSheets:
 
         body = {"values": [values]}
         try:
-            service = self.get_service()
             request = (
-                service.spreadsheets()
+                self.service.spreadsheets()
                 .values()
                 .append(
                     spreadsheetId=self.spreadsheet_id,

@@ -11,9 +11,9 @@ export RELEASE=~/.cosmic/tmp/cosmic-latest-release
 download_latest_release() {
         mkdir -p $RELEASE
         rm -rf $RELEASE/*;
-        gh release download -A tar.gz -D $RELEASE
-        tar -xzf $RELEASE/mctech-crd*.tar.gz -C $RELEASE
-        rm $RELEASE/*.tar.gz
+        gh release download -A tar.gz -D $RELEASE && \
+        tar -xzf $RELEASE/mctech-crd*.tar.gz -C $RELEASE && \
+        rm $RELEASE/*.tar.gz && \
         echo $(ls $RELEASE)
 }
 

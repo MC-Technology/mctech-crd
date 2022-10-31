@@ -210,11 +210,11 @@ def listen(config):
         if system() == "Linux":
             try:
                 import keyboard
+                keyboard.on_press_key("enter", test_hit)
+                print("TEST MODE: press enter on the rPi keyboard to trigger a hit")
             except (ImportError):
                 print("To run with keyboard_trigger you must run the script as root")
                 sys.exit(1)
-            print("TEST MODE: press enter on the rPi keyboard to trigger a hit")
-            keyboard.on_press_key("enter", test_hit)
 
     try:
         logger.warning("Sensor initialized, waiting for input or CTRL+C to quit")
