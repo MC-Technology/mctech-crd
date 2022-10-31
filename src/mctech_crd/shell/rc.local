@@ -1,0 +1,17 @@
+#!/bin/sh -e
+#
+# rc.local
+# Print the IP address
+_IP=$(hostname -I) || true
+if [ "$_IP" ]; then
+  printf "My IP address is %s\n" "$_IP"
+fi
+
+# cosmic
+
+# setup and activate pyenv venv
+export PYENV_VERSION=$(cat ~/.cosmic/.python-version)
+source $(cosmic init)
+cosmic start
+
+# end cosmic
