@@ -16,7 +16,6 @@ from mctech_crd.gm_sensor import GMSensor
 from mctech_crd.google_sheets import GoogleSheets
 
 # import logging_config
-# from mctech_crd.media_player import MediaPlayer
 from mctech_crd.midi_input import MidiInput
 from mctech_crd.relay_output import RelayOutput
 from mctech_crd.serial_number import get_serial_number
@@ -26,7 +25,7 @@ from mctech_crd.text_event_writer import TextEventWriter
 
 
 # External libs
-# from sixfab_sensors import SixFabSensors
+
 
 logger = logging.getLogger()
 
@@ -78,9 +77,10 @@ def listen(config):
     relay_config = config.get_relay_output()
     switch_config = config.get_switch_input()
 
-    # if config.has_media_player():
-    #     logger.info("Using Media Player")
-    #     player = MediaPlayer()
+    if config.has_media_player():
+        logger.info("Using Media Player")
+        from mctech_crd.media_player import MediaPlayer
+        player = MediaPlayer()
 
     if config.has_text_logging():
         logger.info("Using local text file logging")
@@ -105,15 +105,16 @@ def listen(config):
         logger.info("Using RelayOutput on {}".format(relay_output_pin))
         relay_output = RelayOutput(relay_output_pin)
 
-    # gps_sensors = None
-    # if config.has_gps_sensor():
-    #   gps_sensors = SixFabSensors()
-    #   logger.info("temperature is {}".format(gps_sensors.get_temperature()))
-    #   gps_location = gps_sensors.get_location()
-    #   if gps_location == False:
-    #     logger.info('No GPS available!')
-    #   else:
-    #     location = gps_location
+    gps_sensors = None
+    if config.has_gps_sensor():
+      from sixfab_sensors import SixFabSensors
+      gps_sensors = SixFabSensors()
+      logger.info("temperature is {}".format(gps_sensors.get_temperature()))
+      gps_location = gps_sensors.get_location()
+      if gps_location == False:
+        logger.info('No GPS available!')
+      else:
+        location = gps_location
 
     serial_number = get_serial_number()
     ip_address = get_ip_address() or "no-network"

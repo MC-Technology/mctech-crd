@@ -16,6 +16,14 @@ class ConfigReader:
 
     @staticmethod
     def get_config_file_path(config_path):
+        """
+        Config file will come from the following in descending precedence
+
+        - cosmic listen --config
+        - ./config_default/<cosmic listen --config>.yaml
+        - COSMIC_CONFIG env var
+        - ./config_default/mct_array
+        """
         config_file = ""
         try:
             if config_path:
@@ -34,7 +42,7 @@ class ConfigReader:
 
         # provide a default
         if not os.path.exists(config_file):
-            config_file = os.path.join(os.path.dirname(__file__), "config_default/dev.yaml")
+            config_file = os.path.join(os.path.dirname(__file__), "config_default/mct_array.yaml")
             logger.info("Defaulting to dev config")
 
         return config_file
