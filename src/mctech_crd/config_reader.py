@@ -43,7 +43,7 @@ class ConfigReader:
         # provide a default
         if not os.path.exists(config_file):
             config_file = os.path.join(os.path.dirname(__file__), "config_default/mct_array.yaml")
-            logger.info("Defaulting to dev config")
+            logger.info("Defaulting to mct_array config")
 
         return config_file
 

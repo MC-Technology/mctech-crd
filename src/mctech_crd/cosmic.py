@@ -205,8 +205,9 @@ def listen(config):
 
     last_time = time()
 
-    if config.keyboard_trigger:
+    if config.keyboard_trigger():
         from platform import system
+        import pudb; pu.db
         # TODO: Get this running in OSX/windows
         if system() == "Linux":
             try:
