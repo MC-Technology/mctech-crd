@@ -41,10 +41,11 @@ def listen(config):
 
 
 @cli.command(name="update")
-def update():
+@click.option('--force', '-f', is_flag=True, help="Update package even if have latest release")
+def update(force):
     # TODO: This manual checking unnecessary if move to PyPi package
     click.echo("Updating cosmic ray detection client")
-    if get_latest_release_version() == __version__:
+    if not force and get_latest_release_version() == __version__:
         click.echo("Latest version already installed")
         return
 
