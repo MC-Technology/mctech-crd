@@ -20,7 +20,7 @@ update_python_environment() {
 
     # This should match mctech-crd/.python-version
     echo "pyenv install -s $COSMIC_PYTHON_VERSION"
-    pyenv install -s $COSMIC_PYTHON_VERSION || echo "Could not install python version" && exit 1
+    pyenv install -s $COSMIC_PYTHON_VERSION || echo "Target python version was not installed" && exit 1
 
     echo "pyenv virtualenv $COSMIC_PYTHON_VERSION $COSMIC_VIRTUALENV"
     pyenv virtualenv $COSMIC_PYTHON_VERSION $COSMIC_VIRTUALENV

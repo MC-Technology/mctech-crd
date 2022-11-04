@@ -131,8 +131,8 @@ See [src/google_sheets.py](src/google_sheets.py)
 
 ## Text Logging
 
-Set `text_logging: true` to enable logging of hits to a text file. This will be sent to a file called 'cosmic_pi_event.log' in this directory
-See [src/text_event_writer.py](src/text_event_writer.py)
+Set `text_logging: true` to enable logging of hits to a text file. This will be
+sent to a file called 'cosmic_pi_event.log' in `/home/.cosmic/tmp`.
 
 ## Location
 

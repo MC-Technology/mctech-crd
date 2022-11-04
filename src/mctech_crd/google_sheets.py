@@ -41,7 +41,7 @@ class GoogleSheets:
     @lru_cache()
     def load_credentials(self):
         # Get google service account from home directory
-        key_file = os.path.normpath(CREDENTIALS_FILE)
+        key_file = os.path.expanduser(CREDENTIALS_FILE)
         if os.path.exists(key_file):
             # https://cloud.google.com/docs/authentication/production#passing_code
             return service_account.Credentials.from_service_account_file(

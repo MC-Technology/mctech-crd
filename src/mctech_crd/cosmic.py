@@ -84,10 +84,7 @@ def listen(config):
 
     if config.has_text_logging():
         logger.info("Using local text file logging")
-        filepath = os.path.normpath(
-            os.path.join(os.path.dirname(__file__), "../cosmic_pi_event.log")
-        )
-        text_log = TextEventWriter(filepath)
+        text_log = TextEventWriter("/home/cosmic/.cosmic/logs/cosmic_pi_event.log")
 
     google_sheets = None
     if google_config:
@@ -207,7 +204,7 @@ def listen(config):
 
     if config.keyboard_trigger():
         from platform import system
-        import pudb; pu.db
+
         # TODO: Get this running in OSX/windows
         if system() == "Linux":
             try:

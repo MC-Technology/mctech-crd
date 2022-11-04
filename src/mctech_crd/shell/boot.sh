@@ -11,7 +11,7 @@
 
 # export COSMIC_DEV_PACKAGE_URL=git+https://$GH_TOKEN@github.com/MC-Technology/mctech-crd.git
 
-DIR=$(dirname "$0")
+# DIR=$(dirname "$0")
 # DIR=$(dirname -- $0)
 
 #cosmic start
@@ -33,10 +33,9 @@ eval "$(pyenv virtualenv-init -)"
 
 
 # setup pyenv
-export PYENV_VERSION=$COSMIC_TARGET_PYENV
-source $DIR/update.sh
+export PYENV_VERSION=$(cat $COSMIC_ROOT/.python-version)
 
-cosmic update --package
+cosmic update # python library
 cosmic update --pyenv
 
 pyenv shell $PYENV_VERSION
