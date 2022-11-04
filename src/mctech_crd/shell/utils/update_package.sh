@@ -17,7 +17,7 @@ install_latest_release(){
     if [[ -z "$COSMIC_DEV_PACKAGE_URL" ]]; then
         download_latest_release
         LATEST_RELEASE=$(ls $RELEASE_DIR | tail -1)
-        pip install --upgrade $LATEST_RELEASE
+        pip install --upgrade $RELEASE_DIR/$LATEST_RELEASE
     else
         echo "Downloading development version mctech-crd"
         pip install --force-reinstall $COSMIC_DEV_PACKAGE_URL
