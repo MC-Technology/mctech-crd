@@ -85,20 +85,24 @@ def update(force, pyenv):
 
 # TODO: this may no longer be required, as we run init.sh from .bashrc
 @cli.command(name="env")
+@click.option('--target', is_flag=True, help="Get current or target environment name $COSMIC_ROOT")
 @click.pass_context
-def env(ctx):
+def env(ctx, target):
     """
-    Setup a python version and return name to stdout
+    Informs $COSMIC_ROOT/.python-version, which informs update_pyenv
     """
-    # TODO: Unnecessary if move to PyPi package
-    try:
-        cosmic_venv = subprocess.check_output(["bash", "-c", INIT_ENV_PATH]).decode("utf-8").strip()
-        print(cosmic_venv)
-    except:
-        ctx.exit(1)
+    if target:
+        try:
+            version_file_src = Path(os.path.dirname(__file__)).resolve().parent
+            version_file = os.path.join(version_file_src, "shell/.python-version")
+            with open(version_file) as python_version_file:
+                click.echo(python_version_file.readline())
+        except:
+            ctx.exit(1)
 
-    ctx.exit(0)
+        ctx.exit(0)
 
+    # else return current env
 
 @cli.command(name="boot")
 @click.pass_context

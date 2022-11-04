@@ -22,6 +22,7 @@ install_latest_release(){
         echo "Downloading development version mctech-crd"
         pip install --force-reinstall $COSMIC_DEV_PACKAGE_URL
     fi
+    echo $(cosmic env --target) > $COSMIC_ROOT/.python-version
 }
 
 install_latest_release
