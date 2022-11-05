@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mctech-crd"
-version = "0.2.3"
+version = "0.2.4"
 description = "MCtech Cosmic Ray Detector"
 authors = ["MC Tech <mail@claudiojolowicz.com>"]
 license = "MIT"
@@ -27,7 +27,7 @@ protobuf = "4.21.8"
 pytest = "7.1.3"
 pyyaml = "6.0"
 mock-gpio = "^0.1.8"
-rpi-gpio = {version = "^0.7.1", platform = "linux"}
+rpi-gpio = { version = "^0.7.1", platform = "linux" }
 
 [tool.poetry.dev-dependencies]
 Pygments = ">=2.10.0"
