@@ -26,7 +26,7 @@
 
 LOG_FILE=bashrc.log
 
-export COSMIC_HOME=~/cosmic
+export COSMIC_HOME=~
 export COSMIC_ROOT=$COSMIC_HOME/.cosmic
 export COSMIC_CREDS=$COSMIC_ROOT/credentials
 export GH_REPO=MC-Technology/mctech-crd

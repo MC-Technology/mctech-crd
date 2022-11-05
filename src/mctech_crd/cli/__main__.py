@@ -119,7 +119,7 @@ def boot(ctx):
     print(boot_script_path)
     ctx.exit(0)
 
-@cli.command(name="init")
+@cli.command(name="login")
 @click.pass_context
 def login(ctx):
     """
