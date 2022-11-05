@@ -41,11 +41,4 @@ eval "$(pyenv virtualenv-init -)"
 # activate pyenv venv
 export PYENV_VERSION=$(cat $COSMIC_ROOT/.python-version)
 
-python -V > $COSMIC_ROOT/log/bashrc.log
-pyenv version >> $COSMIC_ROOT/log/bashrc.log
-whoami >> $COSMIC_ROOT/log/bashrc.log
-cosmic version >> $COSMIC_ROOT/log/bashrc.log
-
-# end cosmic
-
-echo "boot" && cat rc.log && echo "bash" && cat bash.log
+sudo systemctl is-active --quiet cosmicservice && echo "Cosmic detection service is running"

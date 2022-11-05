@@ -194,8 +194,25 @@ When a hit is detected, it will switch on a relay on the configured pin for a nu
 Another way of faking hits using a switch that connects the configured pin to ground
 
 `gpio_pin` - the pin that the switch is connected to.
+## Service
+
+The cosmic listener starts at boot as a background service. It can be monitored
+and managed as follows:
+
+```
+sudo systemctl status cosmicservice
+sudo systemctl start cosmicservice
+sudo systemctl stop cosmicservice
+sudo systemctl restart cosmicservice
+
+# To check if the service is running
+sudo systemctl is-active --quiet cosmicservice && echo "running" || echo "not running"
+```
+
 
 ## Credits
+
+The initial code for this project was written by [glenpike](https://github.com/glenpike).
 
 This python package structure was initially generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter] template.
 

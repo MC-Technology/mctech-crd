@@ -26,11 +26,13 @@ export GH_REPO=MC-Technology/mctech-crd
 export PYENV_ROOT="$COSMIC_HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
+if [ -d /boot/mct_credentials ]; then
+    mv /boot/mct_credentials/* $COSMIC_CREDS
+fi
 for f in $COSMIC_CREDS/*.sh; do source $f; done
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
 
 # setup pyenv
 export PYENV_VERSION=$(cat $COSMIC_ROOT/.python-version)

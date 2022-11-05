@@ -110,7 +110,7 @@ def boot(ctx):
     """
     Return path for cosmic boot.sh cript to stdout
 
-    This allows the bashrc to run the shell script direct and set environment
+    This allows the service to run the shell script direct and set environment
     variables
     """
     package_dir = Path(os.path.dirname(__file__)).resolve().parent
@@ -121,17 +121,17 @@ def boot(ctx):
 
 @cli.command(name="init")
 @click.pass_context
-def init(ctx):
+def login(ctx):
     """
-    Return path for cosmic init.sh cript to stdout
+    Return path for cosmic login.sh cript to stdout
 
-    This allows the bashrc to run the shell script direct and set environment
+    This allows .bashrc to run the shell script direct and set environment
     variables
     """
     package_dir = Path(os.path.dirname(__file__)).resolve().parent
-    init_script = os.path.join(package_dir, "shell/init.sh")
+    login_script = os.path.join(package_dir, "shell/login.sh")
 
-    print(init_script)
+    print(login_script)
     ctx.exit(0)
 
 

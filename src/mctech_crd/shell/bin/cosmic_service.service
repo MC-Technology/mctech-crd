@@ -1,0 +1,9 @@
+[Unit]
+Description=Listener for cosmic ray events.
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /usr/bin/cosmic_service.sh
+
+[Install]
+WantedBy=multi-user.target

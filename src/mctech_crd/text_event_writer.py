@@ -9,6 +9,9 @@ class TextEventWriter:
 
         line = ", ".join(values)
 
-        with open(self.filepath, "a") as file:
-            file.write("{}\n".format(line))
-            file.close()
+        try:
+            with open(self.filepath, "a") as file:
+                file.write("{}\n".format(line))
+                file.close()
+        except PermissionError:
+            pass
