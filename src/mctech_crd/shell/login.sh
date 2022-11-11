@@ -34,6 +34,8 @@ export GH_REPO=MC-Technology/mctech-crd
 export PYENV_ROOT="$COSMIC_HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
+for f in $COSMIC_CREDS/*.sh; do source $f; done
+
 # add pyenv to path
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
@@ -41,4 +43,6 @@ eval "$(pyenv virtualenv-init -)"
 # activate pyenv venv
 export PYENV_VERSION=$(cat $COSMIC_ROOT/.python-version)
 
-sudo systemctl is-active --quiet cosmicservice && echo "Cosmic detection service is running"
+sudo systemctl is-active --quiet cosmicservice && \
+echo "Cosmic detection service is running" && \
+echo "Monitor with 'sudo systemctl status cosmicservice'"

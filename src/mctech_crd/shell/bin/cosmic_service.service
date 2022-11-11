@@ -1,8 +1,8 @@
 [Unit]
 Description=Listener for cosmic ray events.
+After=network-online.target
 
 [Service]
-Type=simple
 ExecStart=/bin/bash /usr/bin/cosmic_service.sh
 
 [Install]

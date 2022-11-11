@@ -27,7 +27,7 @@ export PYENV_ROOT="$COSMIC_HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
 if [ -d /boot/mct_credentials ]; then
-    mv /boot/mct_credentials/* $COSMIC_CREDS
+    mv /boot/mct_credentials/* $COSMIC_CREDS 2>/dev/null)
 fi
 for f in $COSMIC_CREDS/*.sh; do source $f; done
 

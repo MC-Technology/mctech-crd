@@ -9,6 +9,7 @@ class ConfigReader:
     """
     Reads configuration for the CRD listener from a yaml file
     """
+
     def __init__(self, config_path):
         self.cfg = []
         self.config_path = self.get_config_file_path(config_path)
@@ -31,18 +32,24 @@ class ConfigReader:
                     config_file = os.path.normpath(config_path)
                     # ensure path is absolute
                     if os.path.isabs(config_file) == False:
-                        config_file = os.path.normpath(os.path.join(os.getcwd(), config_file))
+                        config_file = os.path.normpath(
+                            os.path.join(os.getcwd(), config_file)
+                        )
                     logger.info(f"Using config file {config_file}")
                 else:
                     # relative path should instead select a default config file, eg 'dev.yaml'
-                    config_file = os.path.join(os.path.dirname(__file__), f"config_default/{config_path}.yaml")
+                    config_file = os.path.join(
+                        os.path.dirname(__file__), f"config_default/{config_path}.yaml"
+                    )
                     logger.info(f"Using default config {config_path}.yaml")
         except:
             pass
 
         # provide a default
         if not os.path.exists(config_file):
-            config_file = os.path.join(os.path.dirname(__file__), "config_default/mct_array.yaml")
+            config_file = os.path.join(
+                os.path.dirname(__file__), "config_default/mct_array.yaml"
+            )
             logger.info("Defaulting to mct_array config")
 
         return config_file
@@ -64,7 +71,7 @@ class ConfigReader:
         return self.cfg["logging"]
 
     def get_location(self):
-        return self.cfg["location"]
+        return self.cfg.get("location", None)
 
     def get_min_interval(self):
         try:
