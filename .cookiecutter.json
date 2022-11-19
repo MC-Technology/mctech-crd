@@ -1,5 +1,5 @@
 {
-  "_output_dir": "/Users/tom/projects/cosmic/cosmic-pi",
+  "_output_dir": "~/projects/cosmic/cosmic-pi",
   "_template": "cookiecutter-hypermodern-python",
   "author": "MC Tech",
   "copyright_year": "2022",

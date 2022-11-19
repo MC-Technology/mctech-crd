@@ -1,6 +1,6 @@
 # MCtech Cosmic Ray Detector
 
-[![License](https://img.shields.io/pypi/l/mctech-crd)][license]
+<!-- [![License](https://img.shields.io/pypi/l/mctech-crd)][license] -->
 
 Python package for a Raspberry Pi Cosmic Ray detector.
 
@@ -42,4 +42,9 @@ Additions and development of the python package and Raspberry Pi image by
 [tombola](https://github.com/tombola).
 
 [license]: https://github.com/MC-Technology/mctech-crd/blob/main/LICENSE
-[hypermodern python cookiecutter]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
+[hypermodern python cookiecutter]:
+    https://github.com/cjolowicz/cookiecutter-hypermodern-python
+
+## License
+
+_This project is licensed under [GPLv3](LICENSE)._
