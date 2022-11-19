@@ -19,8 +19,9 @@ logger = logging.getLogger()
 # https://developers.google.com/identity/protocols/oauth2/scopes#sheets
 # SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 SCOPES = ["https://www.googleapis.com/auth/drive"]
-RANGE_NAME = "Sheet1"
+RANGE_NAME = "Sheet1!A:A"
 CREDENTIALS_FILE = "~/.cosmic/credentials/google_api.json"
+
 
 class GoogleSheets:
     def __init__(self, config):
@@ -55,7 +56,9 @@ class GoogleSheets:
 
     def write_event(self, iso_time, serial_number, extra_fields):
         if not self.service:
-            logger.warning("GoogleSheets - no service provided (likely missing credentials)")
+            logger.warning(
+                "GoogleSheets - no service provided (likely missing credentials)"
+            )
             return
 
         value_input_option = "RAW"

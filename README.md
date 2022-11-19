@@ -1,5 +1,7 @@
 # MCtech Cosmic Ray Detector
 
+[![License](https://img.shields.io/pypi/l/mctech-crd)][license]
+
 Python package for a Raspberry Pi Cosmic Ray detector.
 
 Designed to work with the 'Cosmic Pi' hardware from Mayes Creative Technology.

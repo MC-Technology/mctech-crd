@@ -6,7 +6,8 @@ class TextEventWriter:
         values = [iso_time, serial_number]
         for key in extra_fields:
             values.append(extra_fields[key])
-
+        # Force None values to string
+        values = ["" if v is None else v for v in values]
         line = ", ".join(values)
 
         try:

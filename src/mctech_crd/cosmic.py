@@ -84,7 +84,12 @@ def listen(config):
 
     if config.has_text_logging():
         logger.info("Using local text file logging")
-        text_log = TextEventWriter("/home/cosmic/.cosmic/logs/cosmic_pi_event.log")
+        cosmic_logs = os.path.expanduser("~/.cosmic/log_dir")
+        try:
+            os.mkdir(cosmic_logs)
+        except FileExistsError:
+            pass
+        text_log = TextEventWriter(f"{cosmic_logs}/cosmic_pi_event.log")
 
     google_sheets = None
     if google_config:
