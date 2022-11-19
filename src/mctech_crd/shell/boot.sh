@@ -44,4 +44,4 @@ pyenv shell $PYENV_VERSION
 python -V > /home/cosmic/boot.log
 whoami >> /home/cosmic/boot.log
 
-cosmic listen
+sudo -u cosmic cosmic listen
