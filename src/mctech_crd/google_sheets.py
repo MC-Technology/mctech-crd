@@ -31,10 +31,10 @@ class GoogleSheets:
             raise Exception("Error: no spreadsheet id is configured")
 
         logger.info("GoogleSheets API initialised")
-        logger.info(f"Logging to sheet: self.spreadsheet_id")
+        logger.info(f"Logging to sheet: {self.spreadsheet_id}")
 
         self.service = self.get_service()
-        
+
     def __del__(self):
         logger.warning("GoogleSheets::__del__")
         self.service = None
