@@ -1,4 +1,5 @@
 # Python libs
+import contextlib
 import getopt
 import logging
 import os
@@ -85,12 +86,10 @@ def listen(config):
 
     if config.has_text_logging():
         logger.info("Using local text file logging")
-        cosmic_logs = "/home/cosmic/.cosmic/log_dir"
-        try:
+        cosmic_logs = "/home/cosmic/.cosmic/logs"
+        with contextlib.suppress(Exception):
             os.mkdir(cosmic_logs)
-        except FileExistsError:
-            pass
-        text_log = TextEventWriter(f"{cosmic_logs}/cosmic_pi_event.log")
+            text_log = TextEventWriter(f"{cosmic_logs}/cosmic_pi_event.log")
 
     google_sheets = None
     if google_config:
@@ -110,7 +109,7 @@ def listen(config):
 
     gps_sensors = None
     if config.has_gps_sensor():
-        try:
+        with contextlib.suppress(ImportError, serial.SerialException):
             import microstacknode.hardware.gps.l80gps
 
             gps_sensor = microstacknode.hardware.gps.l80gps.L80GPS()
@@ -134,9 +133,6 @@ def listen(config):
                 logger.info("No GPS available!")
             else:
                 location = ", ".join([result["latitude"], result["longitude"]])
-        except (ImportError, serial.SerialException):
-            pass
-
     serial_number = get_serial_number()
     ip_address = get_ip_address() or "no-network"
     logger.warning("IP is {}, serial_number: {}".format(ip_address, serial_number))
