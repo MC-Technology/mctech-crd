@@ -85,7 +85,7 @@ def listen(config):
 
     if config.has_text_logging():
         logger.info("Using local text file logging")
-        cosmic_logs = os.path.expanduser("~/.cosmic/log_dir")
+        cosmic_logs = "/home/cosmic/.cosmic/log_dir"
         try:
             os.mkdir(cosmic_logs)
         except FileExistsError:

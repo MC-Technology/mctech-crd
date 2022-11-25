@@ -79,7 +79,7 @@ def update(force, pyenv):
         try:
             subprocess.run(["bash", "-c", UPDATE_PYENV_PATH], check=True)
         except:
-            click.echo("Could not update python environment")
+            click.echo("Did not update python environment")
             sys.exit(1)
 
         click.echo("Python version updated for virtualenv (pyenv)")

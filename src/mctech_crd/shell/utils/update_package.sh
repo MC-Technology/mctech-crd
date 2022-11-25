@@ -24,5 +24,4 @@ install_latest_release(){
     fi
     echo $(cosmic env --target) > $COSMIC_ROOT/.python-version
 }
-
 install_latest_release

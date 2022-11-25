@@ -11,8 +11,15 @@
 
 # export COSMIC_DEV_PACKAGE_URL=git+https://$GH_TOKEN@github.com/MC-Technology/mctech-crd.git
 
+# Log output and errors during boot
+set -x;
+truncate -s 0 ~/.cosmic/logs/boot.log
+exec > >(tee -a /home/cosmic/.cosmic/logs/boot.log) 2>&1
+
 # DIR=$(dirname "$0")
 # DIR=$(dirname -- $0)
+DIR=$(dirname "$0")
+echo $DIR
 
 #cosmic start
 
@@ -27,11 +34,11 @@ export PYENV_ROOT="$COSMIC_HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
 if [ -d /boot/mct_credentials ]; then
-    mv /boot/mct_credentials/* $COSMIC_CREDS 2>/dev/null)
+    mv /boot/mct_credentials/* $COSMIC_CREDS
 fi
 for f in $COSMIC_CREDS/*.sh; do source $f; done
 
-# Allow github cli to authenticate git commands
+# Allow github cli to authenticate git
 gh auth setup-git
 
 eval "$(pyenv init -)"
@@ -40,12 +47,4 @@ eval "$(pyenv virtualenv-init -)"
 # setup pyenv
 export PYENV_VERSION=$(cat $COSMIC_ROOT/.python-version)
 
-
-cosmic update # python library
-cosmic update --pyenv
-
-# pyenv shell $PYENV_VERSION
-# python -V > /home/cosmic/boot.log
-# whoami >> /home/cosmic/boot.log
-
-cosmic listen
+su cosmic -c "cosmic update; cosmic update --pyenv; cosmic listen" # python library
