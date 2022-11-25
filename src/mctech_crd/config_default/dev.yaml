@@ -1,14 +1,14 @@
+debug: 1
 location: SE10 8XJ
-keyboard_trigger: 1
+keyboard_trigger: 0
 media_player: false
 network:
   max_retries: 10
 google_logging:
   # credentials_file: development
-  sheet_id: 10eR2e-A6Gmm-V0kRyeiF26AB9Pry2V3inDA64CelqEs
-  debug: 1
+  sheet_id: 1L8arTDLJPEf_1JPNVlUn25ykLgOh4MmRFd5z42QWCms
 text_logging: true
-gps_sensor: false
+gps_sensor: true
 servo_motor: false
 midi_controls:
   sensitivity: 10

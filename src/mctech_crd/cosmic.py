@@ -80,6 +80,7 @@ def listen(config):
     if config.has_media_player():
         logger.info("Using Media Player")
         from mctech_crd.media_player import MediaPlayer
+
         player = MediaPlayer()
 
     if config.has_text_logging():
@@ -109,14 +110,32 @@ def listen(config):
 
     gps_sensors = None
     if config.has_gps_sensor():
-      from sixfab_sensors import SixFabSensors
-      gps_sensors = SixFabSensors()
-      logger.info("temperature is {}".format(gps_sensors.get_temperature()))
-      gps_location = gps_sensors.get_location()
-      if gps_location == False:
-        logger.info('No GPS available!')
-      else:
-        location = gps_location
+        try:
+            import microstacknode.hardware.gps.l80gps
+
+            gps_sensor = microstacknode.hardware.gps.l80gps.L80GPS()
+            result = gps_sensor.get_gprmc()
+            # example_result = {
+            #     'message_id': '$GPRMC',
+            #     'utc': 112622.0,
+            #     'data_valid': 'A',
+            #     'latitude': 50.667441666666999,
+            #     'ns': 'N',
+            #     'longitude': -3.8378666666666999,
+            #     'ew': 'W',
+            #     'speed': '0.00',
+            #     'cog': '75.61',
+            #     'date': '251122',
+            #     'mag_var': '',
+            #     'eq': '',
+            #     'pos_mode': 'A'
+            # }
+            if not result.get("latitude"):
+                logger.info("No GPS available!")
+            else:
+                location = ", ".join([result["latitude"], result["longitude"]])
+        except (ImportError, serial.SerialException):
+            pass
 
     serial_number = get_serial_number()
     ip_address = get_ip_address() or "no-network"
@@ -132,8 +151,6 @@ def listen(config):
         hit_time = time()
         iso_time = strftime("%Y-%m-%dT%H:%M:%S", localtime(hit_time))
         columns = [("ip_address", ip_address), ("location", location)]
-        if test:
-            columns.append(("test", "TEST"))
         extra_fields = OrderedDict(columns)
 
         # These are all blocking - is that okay?
@@ -214,6 +231,7 @@ def listen(config):
         if system() == "Linux":
             try:
                 import keyboard
+
                 keyboard.on_press_key("enter", test_hit)
                 print("TEST MODE: press enter on the rPi keyboard to trigger a hit")
             except (ImportError):

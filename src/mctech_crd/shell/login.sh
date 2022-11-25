@@ -36,6 +36,9 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 for f in $COSMIC_CREDS/*.sh; do source $f; done
 
+# Allow github cli to authenticate git commands
+gh auth setup-git
+
 # add pyenv to path
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"

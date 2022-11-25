@@ -1,4 +1,5 @@
 from mctech_crd.cosmic import listen as crd_listen
+
 """Command-line interface."""
 from mctech_crd import __version__
 from pathlib import Path
@@ -11,7 +12,7 @@ import os.path
 import json
 from pathlib import PurePath
 
-logging.basicConfig(level=logging.INFO, format='%(message)s')
+logging.basicConfig(level=logging.INFO, format="%(message)s")
 
 script_dir = PurePath(os.path.dirname(__file__)).parent.joinpath("shell")
 
@@ -22,6 +23,7 @@ GH_GET_RELEASE = script_dir.joinpath("utils/get_latest_release.sh")
 
 # os.path.normpath(os.path.join(script_dir, rel_path))
 
+
 def get_latest_release_version():
     try:
         release = json.loads(subprocess.check_output(["bash", "-c", GH_GET_RELEASE]))
@@ -29,25 +31,37 @@ def get_latest_release_version():
     except:
         return None
 
+
 @click.group()
 def cli():
     pass
 
 
 @cli.command(name="listen")
-@click.option('--config', envvar='COSMIC_CONFIG')
+@click.option("--config", envvar="COSMIC_CONFIG")
 def listen(config):
     click.echo("Listening for cosmic ray detector events")
+    # TODO: ensure service is not already running
+    # sudo systemctl stop cosmicservice
+    # TODO: ensure command is not already running
     crd_listen(config)
 
 
-@cli.command(name="update", help="Update python package/environment for cosmic detector")
-@click.option('--force', '-f', is_flag=True, help="Update package even if have latest release")
-@click.option('--pyenv', is_flag=True, help="Update python environment based on ~/cosmic/.cosmic/.python-version")
+@cli.command(
+    name="update", help="Update python package/environment for cosmic detector"
+)
+@click.option(
+    "--force", "-f", is_flag=True, help="Update package even if have latest release"
+)
+@click.option(
+    "--pyenv",
+    is_flag=True,
+    help="Update python environment based on ~/cosmic/.cosmic/.python-version",
+)
 def update(force, pyenv):
     # UPDATE PYTHON ENVIRONMENT (PYENV)
     if pyenv:
-        cosmic_root = os.environ.get('COSMIC_ROOT', '')
+        cosmic_root = os.environ.get("COSMIC_ROOT", "")
         if not cosmic_root:
             click.echo("Could not locate COSMIC_ROOT")
             sys.exit(1)
@@ -85,7 +99,9 @@ def update(force, pyenv):
 
 # TODO: this may no longer be required, as we run init.sh from .bashrc
 @cli.command(name="env")
-@click.option('--target', is_flag=True, help="Get current or target environment name $COSMIC_ROOT")
+@click.option(
+    "--target", is_flag=True, help="Get current or target environment name $COSMIC_ROOT"
+)
 @click.pass_context
 def env(ctx, target):
     """
@@ -104,6 +120,7 @@ def env(ctx, target):
 
     # else return current env
 
+
 @cli.command(name="boot")
 @click.pass_context
 def boot(ctx):
@@ -118,6 +135,7 @@ def boot(ctx):
 
     print(boot_script_path)
     ctx.exit(0)
+
 
 @cli.command(name="login")
 @click.pass_context
@@ -136,7 +154,7 @@ def login(ctx):
 
 
 @cli.command(name="version")
-@click.option('--latest', is_flag=True, help="Check if cosmic package is up to date")
+@click.option("--latest", is_flag=True, help="Check if cosmic package is up to date")
 def version(latest):
     if latest:
         if latest_release := get_latest_release_version():
@@ -147,8 +165,8 @@ def version(latest):
                 print("up to date")
                 sys.exit(0)
 
-            sl = latest_release.split('.') # latest release semver
-            sc = __version__.split('.') # current release semver
+            sl = latest_release.split(".")  # latest release semver
+            sc = __version__.split(".")  # current release semver
             # Check if running a minor version greater than latest release (ie dev)
             if sc[0] == sl[0] and sc[1] == sl[1] and int(sc[2]) > int(sl[2]):
                 sys.exit(0)

@@ -6,7 +6,6 @@ network:
 google_logging:
   # credentials_file: development
   sheet_id: 10eR2e-A6Gmm-V0kRyeiF26AB9Pry2V3inDA64CelqEs
-  debug: 1
 text_logging: true
 gps_sensor: false
 servo_motor: false

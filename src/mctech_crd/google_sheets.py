@@ -26,15 +26,15 @@ CREDENTIALS_FILE = "~/.cosmic/credentials/google_api.json"
 class GoogleSheets:
     def __init__(self, config):
         self.credentials_file = config.get("credentials_file", None)
-
         self.spreadsheet_id = config.get("sheet_id")
-        self.debug = config.get("debug", False)
         if self.spreadsheet_id is None:
             raise Exception("Error: no spreadsheet id is configured")
-        if self.debug:
-            print("GoogleSheets API initialised")
-        self.service = self.get_service()
 
+        logger.info("GoogleSheets API initialised")
+        logger.info(f"Logging to sheet: self.spreadsheet_id")
+
+        self.service = self.get_service()
+        
     def __del__(self):
         logger.warning("GoogleSheets::__del__")
         self.service = None

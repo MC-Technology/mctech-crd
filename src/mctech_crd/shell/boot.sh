@@ -31,17 +31,21 @@ if [ -d /boot/mct_credentials ]; then
 fi
 for f in $COSMIC_CREDS/*.sh; do source $f; done
 
+# Allow github cli to authenticate git commands
+gh auth setup-git
+
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # setup pyenv
 export PYENV_VERSION=$(cat $COSMIC_ROOT/.python-version)
 
+
 cosmic update # python library
 cosmic update --pyenv
 
-pyenv shell $PYENV_VERSION
-python -V > /home/cosmic/boot.log
-whoami >> /home/cosmic/boot.log
+# pyenv shell $PYENV_VERSION
+# python -V > /home/cosmic/boot.log
+# whoami >> /home/cosmic/boot.log
 
-sudo -u cosmic cosmic listen
+cosmic listen
