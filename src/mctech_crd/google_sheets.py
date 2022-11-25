@@ -23,12 +23,20 @@ RANGE_NAME = "Sheet1!A:A"
 CREDENTIALS_FILE = "~/.cosmic/credentials/google_api.json"
 
 
+class GoogleSheetsException(AttributeError):
+    """
+    Raised when google sheet API access cannot be instantiated
+    """
+
+    pass
+
+
 class GoogleSheets:
     def __init__(self, config):
         self.credentials_file = config.get("credentials_file", None)
         self.spreadsheet_id = config.get("sheet_id")
         if self.spreadsheet_id is None:
-            raise Exception("Error: no spreadsheet id is configured")
+            raise GoogleSheetsException("Error: no spreadsheet id is configured")
 
         logger.info("GoogleSheets API initialised")
         logger.info(f"Logging to sheet: {self.spreadsheet_id}")
@@ -83,11 +91,10 @@ class GoogleSheets:
             )
             result = request.execute()
 
-            if self.debug:
-                print(
-                    "GoogleSheets: {0} cells updated.".format(
-                        result.get("updates").get("updatedCells")
-                    )
+            print(
+                "GoogleSheets: {0} cells updated.".format(
+                    result.get("updates").get("updatedCells")
                 )
+            )
         except Exception as e:
-            logger.warning("GoogleSheets::write_event failed {}".format(e))
+            logger.warning(f"GoogleSheets::write_event failed {e}")

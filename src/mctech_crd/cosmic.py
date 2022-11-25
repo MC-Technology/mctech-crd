@@ -26,6 +26,7 @@ from mctech_crd.text_event_writer import TextEventWriter
 
 
 # External libs
+import serial
 
 
 logger = logging.getLogger()
