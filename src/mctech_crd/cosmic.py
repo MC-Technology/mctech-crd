@@ -2,6 +2,7 @@
 import contextlib
 import getopt
 import logging
+import subprocess
 import os
 import sys
 from collections import OrderedDict
@@ -78,6 +79,8 @@ def listen(config):
     google_config = config.google_logging()
     relay_config = config.get_relay_output()
     switch_config = config.get_switch_input()
+    text_log = None
+    player = None
 
     if config.has_media_player():
         logger.info("Using Media Player")
@@ -89,7 +92,7 @@ def listen(config):
         logger.info("Using local text file logging")
         cosmic_logs = "/home/cosmic/.cosmic/logs"
         with contextlib.suppress(Exception):
-            os.mkdir(cosmic_logs)
+            os.path.exists(cosmic_logs) or os.mkdir(cosmic_logs)
             text_log = TextEventWriter(f"{cosmic_logs}/cosmic_pi_event.log")
 
     google_sheets = None
@@ -108,39 +111,28 @@ def listen(config):
         logger.info("Using RelayOutput on {}".format(relay_output_pin))
         relay_output = RelayOutput(relay_output_pin)
 
-    gps_sensors = None
+    gps_sensor = None
     if config.has_gps_sensor():
-        with contextlib.suppress(ImportError, serial.SerialException):
+        try:
             import microstacknode.hardware.gps.l80gps
 
             gps_sensor = microstacknode.hardware.gps.l80gps.L80GPS()
             result = gps_sensor.get_gprmc()
-            # example_result = {
-            #     'message_id': '$GPRMC',
-            #     'utc': 112622.0,
-            #     'data_valid': 'A',
-            #     'latitude': 50.667441666666999,
-            #     'ns': 'N',
-            #     'longitude': -3.8378666666666999,
-            #     'ew': 'W',
-            #     'speed': '0.00',
-            #     'cog': '75.61',
-            #     'date': '251122',
-            #     'mag_var': '',
-            #     'eq': '',
-            #     'pos_mode': 'A'
-            # }
             if not result.get("latitude"):
                 logger.info("No GPS available!")
             else:
-                location = ", ".join([result["latitude"], result["longitude"]])
+                location = f"{result['latitude']},{result['longitude']}"
+
+        except Exception as e:
+            print("GPS sensor error:\n", e)
+
     serial_number = get_serial_number()
     ip_address = get_ip_address() or "no-network"
     logger.warning("IP is {}, serial_number: {}".format(ip_address, serial_number))
 
     logger.warning("location is {}".format(location))
 
-    if config.has_media_player():
+    if player:
         player.play_media()
 
     def hit_counter(test=False):
@@ -156,10 +148,11 @@ def listen(config):
             if google_sheets is not None:
                 google_sheets.write_event(iso_time, serial_number, extra_fields)
 
-            if config.has_text_logging():
+            if text_log:
+                print("text log exists")
                 text_log.write_event(iso_time, serial_number, extra_fields)
 
-            if config.has_media_player():
+            if player:
                 player.play_media()
 
             if config.has_servo_motor():
@@ -221,20 +214,6 @@ def listen(config):
 
     last_time = time()
 
-    if config.keyboard_trigger():
-        from platform import system
-
-        # TODO: Get this running in OSX/windows
-        if system() == "Linux":
-            try:
-                import keyboard
-
-                keyboard.on_press_key("enter", test_hit)
-                print("TEST MODE: press enter on the rPi keyboard to trigger a hit")
-            except (ImportError):
-                print("To run with keyboard_trigger you must run the script as root")
-                sys.exit(1)
-
     try:
         logger.warning("Sensor initialized, waiting for input or CTRL+C to quit")
         while True:
@@ -242,9 +221,9 @@ def listen(config):
 
     except KeyboardInterrupt:
         del gm
-        if gps_sensors is not None:
-            del gps_sensors
-        if config.has_media_player():
+        if gps_sensor is not None:
+            del gps_sensor
+        if player:
             del player
         if google_sheets is not None:
             del google_sheets

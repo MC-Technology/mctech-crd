@@ -8,9 +8,10 @@ import subprocess
 import sys
 import logging
 
-import os.path
+import os
 import json
 from pathlib import PurePath
+import subprocess
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
@@ -36,14 +37,36 @@ def get_latest_release_version():
 def cli():
     pass
 
+def cosmicservice_process_id():
+    cosmic_service_process = subprocess.run(
+        "systemctl show --property MainPID --value cosmicservice",  
+        capture_output=True, 
+        shell=True
+    ).stdout.decode().strip()
+    return int(cosmic_service_process)
+
+def cosmic_service_already_running():
+    this_process = os.getpid()
+    if not (service_process := cosmicservice_process_id()):
+        return False
+    if this_process == service_process:
+        return False
+    return True
+
 
 @cli.command(name="listen")
 @click.option("--config", envvar="COSMIC_CONFIG")
 def listen(config):
+    # TODO: ensure command is not already running from another shell
+    if cosmic_service_already_running():
+        click.echo(
+            "The cosmic listener is already active (runs on boot)\n"
+            "To run `cosmic listen` in this shell instead, first run:\n"
+            "sudo systemctl stop cosmicservice"
+        )
+        sys.exit(1)
+
     click.echo("Listening for cosmic ray detector events")
-    # TODO: ensure service is not already running
-    # sudo systemctl stop cosmicservice
-    # TODO: ensure command is not already running
     crd_listen(config)
 
 

@@ -64,9 +64,6 @@ class ConfigReader:
 
         self.read_config()
 
-    def keyboard_trigger(self):
-        return self.cfg.get("keyboard_trigger", 0)
-
     def get_logging(self):
         return self.cfg["logging"]
 

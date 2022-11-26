@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mctech-crd"
-version = "0.2.9"
+version = "0.3.0"
 description = "MCtech Cosmic Ray Detector"
 authors = ["MC Tech <mail@claudiojolowicz.com>"]
 license = "MIT"
