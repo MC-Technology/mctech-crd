@@ -37,20 +37,34 @@ def get_latest_release_version():
 def cli():
     pass
 
+
 def cosmicservice_process_id():
-    cosmic_service_process = subprocess.run(
-        "systemctl show --property MainPID --value cosmicservice",  
-        capture_output=True, 
-        shell=True
-    ).stdout.decode().strip()
+    cosmic_service_process = (
+        subprocess.run(
+            "systemctl show --property MainPID --value cosmicservice",
+            capture_output=True,
+            shell=True,
+        )
+        .stdout.decode()
+        .strip()
+    )
     return int(cosmic_service_process)
 
+
 def cosmic_service_already_running():
-    this_process = os.getpid()
-    if not (service_process := cosmicservice_process_id()):
+    # Get the process group id of the parent process for comparison
+    # https://www.geeksforgeeks.org/python-os-getpgid-method
+    this_process = os.getpgid(os.getppid())
+    service_process = cosmicservice_process_id()
+    if not service_process:
+        # There is no cosmicservice running
+        print(f"{this_process=} := {cosmicservice_process_id()}")
         return False
     if this_process == service_process:
+        # This process is the cosmicservice
+        print(f"{this_process=} == {cosmicservice_process_id()}")
         return False
+    # There is a cosmicservice running and it is not this process
     return True
 
 
